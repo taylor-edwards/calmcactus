@@ -1,0 +1,5 @@
+.wrapper {
+  background: var(--secondary-fill);
+  border-radius: var(--outer-bevel);
+  color: var(--secondary-text);
+}

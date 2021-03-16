@@ -1,0 +1,19 @@
+.link {
+  color: var(--accent-default);
+  cursor: pointer;
+  outline: 0;
+  text-decoration: none;
+}
+
+.link:hover,
+.link:focus {
+  color: var(--accent-hover);
+}
+
+.link:active {
+  color: var(--accent-active);
+}
+
+.link:disabled {
+  cursor: not-allowed;
+}
