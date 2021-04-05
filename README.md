@@ -4,13 +4,10 @@ calmcactus.com is a [Next.js](https://nextjs.org/) project bootstrapped with [`c
 
 ## Getting Started
 
-First, run the development server:
 
-```bash
-npm run start
-```
+First install the project's dependencies with `npm i`, then disable telemetry with `npx next telemetry disable`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then run the development server with `npm run start` and open [http://localhost:3000](http://localhost:3000) with your browser.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
