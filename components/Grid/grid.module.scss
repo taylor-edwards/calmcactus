@@ -1,0 +1,10 @@
+.grid {
+  --h-gap: 40px;
+
+  display: grid;
+  grid-gap: 20px var(--h-gap);
+  max-width: calc(
+    (var(--size) * var(--columns)) + (var(--h-gap) * (var(--columns) - 1))
+  );
+  grid-template-columns: repeat(auto-fill, var(--size));
+}

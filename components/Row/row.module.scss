@@ -1,0 +1,17 @@
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.grow {
+    flex-grow: 1;
+}
+
+.shrink {
+    flex-shrink: 1;
+}
+
+.flex {
+    flex-grow: 1;
+    flex-shrink: 1;
+}

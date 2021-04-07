@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'components/Image'
-import styles from '../styles/Home.module.scss'
+import styles from 'styles/Home.module.scss'
 
 export default function Home() {
   return (

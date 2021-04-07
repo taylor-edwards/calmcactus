@@ -1,0 +1,55 @@
+.wrapper {
+  --offset-size: 18px;
+  
+  width: 100%;
+  padding-top: var(--offset-size);
+  position: relative;
+}
+
+.link {
+  color: inherit;
+}
+
+.content {
+  background: var(--fill);
+  border-radius: var(--inner-bevel);
+  height: 300px;
+  width: 100%;
+}
+
+.label {
+  margin: 12px 0;
+  padding: 6px 18px 6px 24px;
+  position: relative;
+}
+
+.label::before {
+  content: "";
+  background: var(--fill);
+  border-radius: 6px;
+  left: 0;
+  top: 0;
+  height: 100%;
+  position: absolute;
+  width: 6px;
+}
+
+.buyBtn {
+  align-items: center;
+  color: inherit;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  margin-left: 12px;
+}
+
+.offsetLabel {
+  background: var(--primary-fill);
+  border: 4px solid var(--fill);
+  border-radius: 50px;
+  padding: 3px 15px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateX(var(--offset-size));
+}

@@ -1,5 +1,5 @@
 import { cn } from 'utils'
-import styles from './image.module.css'
+import styles from './image.module.scss'
 
 const Image = ({
   alt = '',

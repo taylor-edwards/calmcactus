@@ -1,0 +1,67 @@
+.heading,
+.subheading,
+.body,
+.caption {
+  word-break: break-word;
+}
+
+/* Text component modes */
+
+.heading {
+  font-family: var(--default-font);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.subheading {
+  font-family: var(--accent-font);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.005em;
+}
+
+.body {
+  font-family: var(--accent-font);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.caption {
+  font-family: var(--default-font);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* Modifiers */
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.uppercase.heading,
+.uppercase.caption {
+  letter-spacing: 0.02em;
+}
+
+.uppercase.subheading,
+.uppercase.body {
+  letter-spacing: 0.055em;
+}
+
+.noWrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /*word-break: break-all;*/
+}

@@ -1,0 +1,45 @@
+.coral {
+    --fill: var(--coral);
+    --text: var(--white);
+}
+
+.canary {
+    --fill: var(--canary);
+    --text: var(--sweater-black);
+}
+
+.saltBlue {
+    --fill: var(--salt-blue);
+    --text: var(--white);
+}
+
+.sweaterBlack {
+    --fill: var(--sweater-black);
+    --text: var(--white);
+}
+
+.white {
+    --fill: var(--white);
+    --text: var(--sweater-black);
+}
+
+.primary {
+    --fill: var(--primary-fill);
+    --text: var(--primary-text);
+}
+
+.secondary {
+    --fill: var(--secondary-fill);
+    --text: var(--secondary-text);
+}
+
+.pattern {
+    --fill: var(--pattern-fill);
+    --text: var(--primary-text);
+}
+
+.accent {
+    --fill: var(--accent-default);
+    --text: var(--white);
+}
+
