@@ -1,0 +1,185 @@
+:root {
+  --black: #000;
+  --canary: #ffc45d;
+  --coral: #ff7f7f;
+  --salt-blue: #bfd7e4;
+  --sweater-black: #272727;
+  --white: #fff;
+
+  --primary-fill: var(--white);
+  --primary-text: var(--black);
+  --secondary-fill: var(--white);
+  --secondary-text: var(--sweater-black);
+
+  --accent-default: var(--coral);
+  --accent-hover: var(--coral);
+  --accent-active: var(--coral);
+
+  --pattern-fill: url(/assets/topography.png) var(--primary-fill);
+  --default-font: "Red Hat Text", sans-serif;
+  --accent-font: "Bodoni Moda", serif;
+
+  --document-width: 1200px;
+  --inner-bevel: 3px;
+  --outer-bevel: 0;
+}
+
+@media (min-width: 800px) {
+  :root {
+    --outer-bevel: 6px;
+  }
+}
+
+/*
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-fill: #000;
+    --primary-text: #f0f0f0;
+    --secondary-fill: #282828;
+    --secondary-text: #fefefe;
+    --accent-default: #fc4;
+    --accent-hover: #ea2;
+    --accent-active: #d80;
+    --pattern-fill: url(/assets/topography-dark.png) var(--primary-fill);
+  }
+}
+*/
+
+@font-face {
+  font-family: "Bodoni Moda";
+  font-weight: 400;
+  src: url("/fonts/BodoniModa-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Bodoni Moda";
+  font-style: italic;
+  font-weight: 400;
+  src: url("/fonts/BodoniModa-Italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Bodoni Moda";
+  font-style: italic;
+  font-weight: 500;
+  src: url("/fonts/BodoniModa-MediumItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Bodoni Moda";
+  font-weight: 500;
+  src: url("/fonts/BodoniModa-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Bodoni Moda";
+  font-weight: 600;
+  src: url("/fonts/BodoniModa-SemiBoldItalic.woff2") format("woff2");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Bodoni Moda";
+  font-style: italic;
+  font-weight: 700;
+  src: url("/fonts/BodoniModa-BoldItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Bodoni Moda";
+  font-weight: 700;
+  src: url("/fonts/BodoniModa-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Bodoni Moda";
+  font-style: italic;
+  font-weight: 800;
+  src: url("/fonts/BodoniModa-ExtraBoldItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Bodoni Moda";
+  font-weight: 800;
+  src: url("/fonts/BodoniModa-ExtraBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Bodoni Moda";
+  font-style: italic;
+  font-weight: 900;
+  src: url("/fonts/BodoniModa-BlackItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Bodoni Moda";
+  font-weight: 900;
+  src: url("/fonts/BodoniModa-Black.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Bodoni Moda";
+  font-weight: 600;
+  src: url("/fonts/BodoniModa-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Red Hat Text";
+  font-weight: 400;
+  src: url("/fonts/RedHatText-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Red Hat Text";
+  font-style: italic;
+  font-weight: 400;
+  src: url("/fonts/RedHatText-Italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Red Hat Text";
+  font-weight: 600;
+  src: url("/fonts/RedHatText-Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Red Hat Text";
+  font-style: italic;
+  font-weight: 600;
+  src: url("/fonts/RedHatText-MediumItalic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Red Hat Text";
+  font-weight: 700;
+  src: url("/fonts/RedHatText-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Red Hat Text";
+  font-style: italic;
+  font-weight: 700;
+  src: url("/fonts/RedHatText-BoldItalic.woff2") format("woff2");
+}
+
+html,
+body {
+  background: var(--pattern-fill);
+  color: var(--primary-text);
+  font-family: var(--default-font);
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+}

@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Image from 'components/Image'
+import styles from '../styles/Home.module.scss'
 
 export default function Home() {
   return (
@@ -10,12 +11,13 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Calm Cactus
+          <Image src="/assets/cclogo.svg" alt="Calm Cactus" />
         </h1>
 
         <p className={styles.description}>
-          Coming soon...
+          See you soon
         </p>
+        <p className={styles.smiley}>&#9787;</p>
       </main>
     </div>
   )
