@@ -1,10 +1,12 @@
+@import 'styles/vars';
+
 :root {
-  --black: #000;
-  --canary: #ffc45d;
-  --coral: #ff7f7f;
-  --salt-blue: #bfd7e4;
-  --sweater-black: #272727;
-  --white: #fff;
+  --black: #{$black};
+  --canary: #{$canary};
+  --coral: #{$coral};
+  --salt-blue: #{$salt-blue};
+  --sweater-black: #{$sweater-black};
+  --white: #{$white};
 
   --primary-fill: var(--white);
   --primary-text: var(--black);
@@ -24,12 +26,6 @@
   --outer-bevel: 0;
 }
 
-@media (min-width: 800px) {
-  :root {
-    --outer-bevel: 6px;
-  }
-}
-
 /*
 @media (prefers-color-scheme: dark) {
   :root {
@@ -44,6 +40,12 @@
   }
 }
 */
+
+@media (min-width: $tablet-min-width) {
+  :root {
+    --outer-bevel: 6px;
+  }
+}
 
 @font-face {
   font-family: "Bodoni Moda";
@@ -70,6 +72,13 @@
   font-weight: 500;
   src: url("/fonts/BodoniModa-Medium.woff2") format("woff2");
 }
+
+@font-face {
+  font-family: "Bodoni Moda";
+  font-weight: 600;
+  src: url("/fonts/BodoniModa-SemiBold.woff2") format("woff2");
+}
+
 @font-face {
   font-family: "Bodoni Moda";
   font-weight: 600;
@@ -117,12 +126,6 @@
 }
 
 @font-face {
-  font-family: "Bodoni Moda";
-  font-weight: 600;
-  src: url("/fonts/BodoniModa-SemiBold.woff2") format("woff2");
-}
-
-@font-face {
   font-family: "Red Hat Text";
   font-weight: 400;
   src: url("/fonts/RedHatText-Regular.woff2") format("woff2");
@@ -161,19 +164,19 @@
   src: url("/fonts/RedHatText-BoldItalic.woff2") format("woff2");
 }
 
-html,
-body {
+html {
   background: var(--pattern-fill);
   color: var(--primary-text);
   font-family: var(--default-font);
-  padding: 0;
-  margin: 0;
 }
 
+body,
 h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 p,
 ul,
 ol,
@@ -182,4 +185,5 @@ li {
   font-size: inherit;
   font-weight: inherit;
   margin: 0;
+  padding: 0;
 }

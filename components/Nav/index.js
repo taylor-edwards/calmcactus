@@ -10,14 +10,17 @@ const Nav = ({ className }) => (
       <Image src="/assets/cclogo.svg" alt="Calm Cactus" className={styles.logo} />
     </Link>
     <div className={styles.links}>
+      <Link className={styles.link} href="/shop">
+        <Text mode={Text.MODES.heading} allCaps>Shop</Text>
+      </Link>
       <Link className={styles.link} href="/about">
         <Text mode={Text.MODES.heading} allCaps>About</Text>
       </Link>
       <Link className={styles.link} href="/about">
-        <Text mode={Text.MODES.heading} allCaps>Twitter</Text>
+        <Image src="/assets/instagram.svg" alt="Calm Cactus on Instagram"/>
       </Link>
       <Link className={styles.link} href="/about">
-        <Text mode={Text.MODES.heading} allCaps>Instagram</Text>
+        <Image src="/assets/twitter.svg" alt="Calm Cactus on Twitter"/>
       </Link>
     </div>
   </nav>

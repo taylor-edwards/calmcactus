@@ -1,9 +1,12 @@
+@import 'styles/vars';
+
 .wrapper {
   --offset-size: 18px;
   
-  width: 100%;
+  box-sizing: border-box;
   padding-top: var(--offset-size);
   position: relative;
+  width: 100%;
 }
 
 .link {
@@ -13,7 +16,7 @@
 .content {
   background: var(--fill);
   border-radius: var(--inner-bevel);
-  height: 300px;
+  height: 100%;
   width: 100%;
 }
 
@@ -52,4 +55,14 @@
   right: 0;
   top: 0;
   transform: translateX(var(--offset-size));
+}
+
+@media (min-width: $tablet-min-width) {
+  .wrapper {
+    padding-right: var(--offset-size);
+  }
+
+  .offsetLabel {
+    transform: none;
+  }
 }

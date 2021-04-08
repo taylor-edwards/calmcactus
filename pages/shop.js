@@ -1,6 +1,6 @@
 import Page from 'partials/Page'
-import Grid from 'components/Grid'
 import ProductCard from 'components/ProductCard'
+import styles from 'styles/shop.module.scss'
 
 const products = [
   {
@@ -50,16 +50,11 @@ const products = [
 const Shop = () => (
   <Page>
     <main>
-      <Grid
-        style={{
-          '--size': 'calc(33% - 28px)',
-          '--columns': '3',
-        }}
-      >
+      <div className={styles.products}>
         {products.map(({ slug, ...product }) => (
-          <ProductCard key={slug} href={`/shop/${slug}`} {...product} />
+          <ProductCard {...product} key={slug} href={`/shop/${slug}`} />
         ))}
-      </Grid>
+      </div>
     </main>
   </Page>
 )

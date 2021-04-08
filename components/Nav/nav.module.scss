@@ -1,20 +1,33 @@
+@import 'styles/vars';
+
 .nav {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
   margin: 24px 0 30px;
-  padding-right: 18px;
 }
 
 .logo {
+  margin: 0 auto 24px;
   width: 100px;
 }
 
 .links {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .link {
-  margin-left: 24px;
+  flex-shrink: 0;
+  margin: 0 12px;
+}
+
+@media (min-width: $tablet-min-width) {
+  .nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo {
+    margin: 0;
+  }
 }

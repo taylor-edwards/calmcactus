@@ -17,10 +17,10 @@ const mark = ({ children, ...props }) => <mark {...props}>{children}</mark>
 const ELEMENTS = { h1, h2, h3, h4, h5, h6, p, span, strong, em, mark }
 
 // mitigate typographic widows by inserting a nonbreaking space between
-// the last two words, if the last word is less than 16 characters long
+// the last two words when the last word is relatively short
 const insertNBSP = str =>
   str.replace(/(\s+)(\S+)$/, (match, p1, p2) =>
-    p2.length < 16 ? `\u00A0${p2}` : match,
+    p2.length < 12 ? `\u00A0${p2}` : match,
   )
 
 const insertEllipsis = str => `${str.replace(/[.,;:\-!?\s\u2026]+$/, '')}\u2026`

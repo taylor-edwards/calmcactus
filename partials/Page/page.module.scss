@@ -1,10 +1,18 @@
+@import 'styles/vars';
+
 .page {
   margin: 0 auto;
   max-width: var(--document-width);
-  padding: 0 40px;
+  padding: 0 30px;
 }
 
 .icon {
   margin: 36px 0;
   max-width: 70px;
+}
+
+@media (min-width: $tablet-min-width) {
+  .page {
+    padding: 0 40px;
+  }
 }
