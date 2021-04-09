@@ -1,8 +1,4 @@
-import Page from 'partials/Page'
-import ProductCard from 'components/ProductCard'
-import styles from 'styles/shop.module.scss'
-
-const products = [
+export const products = [
   {
     title: 'GROW THROW',
     label: 'Sold out',
@@ -46,17 +42,3 @@ const products = [
     color: 'canary',
   },
 ]
-
-const Shop = () => (
-  <Page>
-    <main>
-      <div className={styles.products}>
-        {products.map(({ slug, ...product }) => (
-          <ProductCard {...product} key={slug} href={`/shop/${slug}`} />
-        ))}
-      </div>
-    </main>
-  </Page>
-)
-
-export default Shop

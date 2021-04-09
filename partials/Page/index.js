@@ -6,7 +6,9 @@ import styles from './page.module.scss'
 const Page = ({ children, className, ...props }) => (
   <div className={cn(styles.page, className)} {...props}>
     <Nav />
-    {children}
+    <main>
+      {children}
+    </main>
     <Icon name="eye" className={styles.icon} size={65} />
   </div>
 )
