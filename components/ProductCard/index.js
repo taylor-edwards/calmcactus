@@ -11,9 +11,8 @@ import styles from './product-card.module.scss'
 const ProductCard = ({
   className,
   color,
-  children,
   href,
-  imageSrc,
+  images,
   label,
   title,
   subtitle,
@@ -22,8 +21,9 @@ const ProductCard = ({
     <Link href={href} title={title}>
       <Card className={styles.image}>
         <AspectRatio ratio={1}>
-          {!!imageSrc && <Image src={imageSrc} className={styles.content} />}
-          {!imageSrc && <div className={styles.content}>{children}</div>}
+          {images.length > 0 && (
+            <Image src={images[0].src} className={styles.content} />
+          )}
         </AspectRatio>
       </Card>
     </Link>
@@ -38,7 +38,11 @@ const ProductCard = ({
       </Link>
       <Link className={styles.buyBtn}>Buy</Link>
     </Row>
-    {label && <Text mode={Text.MODES.heading} allCaps className={styles.offsetLabel}>{label}</Text>}
+    {label && (
+      <Text mode={Text.MODES.heading} allCaps className={styles.offsetLabel}>
+        {label}
+      </Text>
+    )}
   </Colorize>
 )
 

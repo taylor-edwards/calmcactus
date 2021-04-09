@@ -1,0 +1,15 @@
+@import 'styles/vars';
+
+.wrapper {}
+
+.images {
+  margin-bottom: 24px;
+}
+
+@media (min-width: $desktop-min-width) {
+  .wrapper {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: 2fr 1fr;
+  }
+}
