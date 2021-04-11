@@ -1,7 +1,7 @@
 import { cn } from 'utils'
 import styles from './aspect-ratio.module.css'
 
-const AspectRatio = ({ ratio, children, className, style, ...props }) => (
+const AspectRatio = ({ ratio, children, className, style = {}, ...props }) => (
   <div
     className={cn(styles.wrapper, className)}
     style={{ ...style, paddingTop: `${ratio * 100}%` }}

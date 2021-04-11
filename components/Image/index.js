@@ -1,18 +1,15 @@
+import { forwardRef } from 'react'
 import { cn } from 'utils'
 import styles from './image.module.scss'
 
-const Image = ({
-  alt = '',
-  className,
-  src,
-  ...props
-}) => (
+const Image = ({ alt = '', className, src, ...props }, ref) => (
   <img
-    {...props}
     alt={alt}
     className={cn(styles.image, className)}
+    ref={ref}
     src={src}
+    {...props}
   />
 )
 
-export default Image
+export default forwardRef(Image)

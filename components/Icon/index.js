@@ -1,3 +1,4 @@
+import { forwardRef } from 'react'
 import { cn } from 'utils'
 import styles from './icon.module.scss'
 
@@ -47,13 +48,18 @@ const twitter = ({ size = iconSize }) => (
 
 const ICONS = { cclogo, eye, instagram, twitter }
 
-const Icon = ({ name, className, size, ...props }) => {
+const Icon = ({ name, className, size, ...props }, ref) => {
   const IconSVG = ICONS[name]
   return (
-    <span className={cn(styles.icon, className)} role="image" {...props}>
+    <span
+      className={cn(styles.icon, className)}
+      role="image"
+      ref={ref}
+      {...props}
+    >
       <IconSVG size={size} />
     </span>
   )
 }
 
-export default Icon
+export default forwardRef(Icon)

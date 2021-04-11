@@ -1,5 +1,9 @@
-const Button = ({ children, type = 'button', ...props }) => (
-  <button type={type} {...props}>{children}</button>
+import { forwardRef } from 'react'
+
+const Button = ({ children, type = 'button', ...props }, ref) => (
+  <button type={type} ref={ref} {...props}>
+    {children}
+  </button>
 )
 
-export default Button
+export default forwardRef(Button)

@@ -1,12 +1,15 @@
+import { forwardRef } from 'react'
 import { cn } from 'utils'
 import styles from './row.module.scss'
 
-const Row = ({ className, children, ...props  })  => (
-    <div className={cn(styles.row, className)} {...props}>
-        {children}
-    </div>
+const Row = ({ className, children, ...props }, ref) => (
+  <div className={cn(styles.row, className)} ref={ref} {...props}>
+    {children}
+  </div>
 )
 
-Row.styles = styles
+const HookedRow = forwardRef(Row)
 
-export default Row
+HookedRow.styles = styles
+
+export default HookedRow
