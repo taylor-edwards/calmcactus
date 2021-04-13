@@ -6,9 +6,9 @@ export const products = [
     slug: 'grow-throw',
     color: 'coral',
     images: [
-      { src: 'https://via.placeholder.com/1000&text=A' },
-      { src: 'https://via.placeholder.com/1000&text=B' },
-      { src: 'https://via.placeholder.com/1000&text=C' },
+      { src: 'https://via.placeholder.com/1000/aaa/272727&text=A' },
+      { src: 'https://via.placeholder.com/1000/aaa/272727&text=B' },
+      { src: 'https://via.placeholder.com/1000/aaa/272727&text=C' },
     ],
   },
   {
@@ -18,9 +18,9 @@ export const products = [
     slug: 'artwork1',
     color: 'canary',
     images: [
-      { src: 'https://via.placeholder.com/1000&text=D' },
-      { src: 'https://via.placeholder.com/1000&text=E' },
-      { src: 'https://via.placeholder.com/1000&text=F' },
+      { src: 'https://via.placeholder.com/1000/aaa/272727&text=D' },
+      { src: 'https://via.placeholder.com/1000/aaa/272727&text=E' },
+      { src: 'https://via.placeholder.com/1000/aaa/272727&text=F' },
     ],
   },
   {
@@ -30,9 +30,9 @@ export const products = [
     slug: 'artwork2',
     color: 'saltBlue',
     images: [
-      { src: 'https://via.placeholder.com/1000&text=G' },
-      { src: 'https://via.placeholder.com/1000&text=H' },
-      { src: 'https://via.placeholder.com/1000&text=I' },
+      { src: 'https://via.placeholder.com/1000/aaa/272727&text=G' },
+      { src: 'https://via.placeholder.com/1000/aaa/272727&text=H' },
+      { src: 'https://via.placeholder.com/1000/aaa/272727&text=I' },
     ],
   },
   {
@@ -42,9 +42,9 @@ export const products = [
     slug: 'artwork3',
     color: 'saltBlue',
     images: [
-      { src: 'https://via.placeholder.com/1000&text=J' },
-      { src: 'https://via.placeholder.com/1000&text=K' },
-      { src: 'https://via.placeholder.com/1000&text=L' },
+      { src: 'https://via.placeholder.com/1000/aaa/272727&text=J' },
+      { src: 'https://via.placeholder.com/1000/aaa/272727&text=K' },
+      { src: 'https://via.placeholder.com/1000/aaa/272727&text=L' },
     ],
   },
   {
@@ -54,9 +54,9 @@ export const products = [
     slug: 'artwork4',
     color: 'coral',
     images: [
-      { src: 'https://via.placeholder.com/1000&text=M' },
-      { src: 'https://via.placeholder.com/1000&text=N' },
-      { src: 'https://via.placeholder.com/1000&text=O' },
+      { src: 'https://via.placeholder.com/1000/aaa/272727&text=M' },
+      { src: 'https://via.placeholder.com/1000/aaa/272727&text=N' },
+      { src: 'https://via.placeholder.com/1000/aaa/272727&text=O' },
     ],
   },
   {
@@ -66,9 +66,9 @@ export const products = [
     slug: 'artwork5',
     color: 'canary',
     images: [
-      { src: 'https://via.placeholder.com/1000&text=P' },
-      { src: 'https://via.placeholder.com/1000&text=Q' },
-      { src: 'https://via.placeholder.com/1000&text=R' },
+      { src: 'https://via.placeholder.com/1000/aaa/272727&text=P' },
+      { src: 'https://via.placeholder.com/1000/aaa/272727&text=Q' },
+      { src: 'https://via.placeholder.com/1000/aaa/272727&text=R' },
     ],
   },
 ]
