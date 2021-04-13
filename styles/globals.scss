@@ -181,7 +181,8 @@ p,
 ul,
 ol,
 li,
-button {
+button,
+a {
   color: inherit;
   font-family: inherit;
   font-size: inherit;
@@ -195,4 +196,9 @@ button {
   background: transparent;
   border: 0;
   cursor: pointer;
+}
+
+a,
+a:link {
+  text-decoration: none;
 }

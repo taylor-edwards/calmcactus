@@ -1,0 +1,22 @@
+.wrapper {
+  background: var(--primary-fill);
+  border: 4px solid var(--fill);
+  border-radius: 50px;
+  padding: 3px 15px;
+
+  &[data-position] {
+    position: absolute;
+  }
+  &[data-position^="top"] {
+    top: 0;
+  }
+  &[data-position^="bottom"] {
+    bottom: 0;
+  }
+  &[data-position$="right"] {
+    right: 0;
+  }
+  &[data-position$="left"] {
+    left: 0;
+  }
+}

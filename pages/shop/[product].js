@@ -1,5 +1,7 @@
 import Page from 'partials/Page'
+import Colorize from 'components/Colorize'
 import ImageGrid from 'components/ImageGrid'
+import Label from 'components/Label'
 import Text from 'components/Text'
 import { products } from 'data'
 import styles from 'styles/product-page.module.scss'
@@ -14,16 +16,19 @@ export const getStaticProps = ({ params: { product } }) => {
 
 export const getStaticPaths = () => {
   return {
-    paths: products.map(({ slug }) => ({ params: { product: slug } })),
     fallback: false,
+    paths: products.map(({ slug }) => ({ params: { product: slug } })),
   }
 }
 
 const ProductPage = ({ product }) => (
   <Page>
-    <div className={styles.wrapper}>
-      <ImageGrid images={product.images} className={styles.images} />
-      <div>
+    <Colorize className={styles.wrapper} color={product.color}>
+      <div className={styles.images}>
+        <Label position="top left" className={styles.label}>{product.label}</Label>
+        <ImageGrid images={product.images} />
+      </div>
+      <div className={styles.description}>
         <Text element="h1" mode={Text.MODES.heading}>
           {product.title}
         </Text>
@@ -34,10 +39,10 @@ const ProductPage = ({ product }) => (
         </Text>
 
         <Text mode={Text.MODES.body}>
-          {product.description ?? 'Missing description'}
+          {product.description ?? 'No description'}
         </Text>
       </div>
-    </div>
+    </Colorize>
   </Page>
 )
 

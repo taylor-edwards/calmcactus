@@ -13,6 +13,14 @@
   color: inherit;
 }
 
+
+.wrapper:hover,
+.wrapper:focus {
+  .title {
+    color: var(--fill);
+  }
+}
+
 .content {
   border: 5px solid var(--fill);
   border-radius: var(--inner-bevel);
@@ -28,8 +36,8 @@
 }
 
 .label::before {
-  content: "";
   background: var(--fill);
+  content: "";
   border-radius: 6px;
   left: 0;
   top: 0;
@@ -47,23 +55,8 @@
   margin-left: 12px;
 }
 
-.offsetLabel {
-  background: var(--primary-fill);
-  border: 4px solid var(--fill);
-  border-radius: 50px;
-  padding: 3px 15px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transform: translateX(var(--offset-size));
-}
-
 @media (min-width: $tablet-min-width) {
   .wrapper {
     padding-right: var(--offset-size);
-  }
-
-  .offsetLabel {
-    transform: none;
   }
 }

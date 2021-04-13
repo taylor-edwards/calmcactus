@@ -3,6 +3,7 @@ import AspectRatio from 'components/AspectRatio'
 import Card from 'components/Card'
 import Colorize from 'components/Colorize'
 import Image from 'components/Image'
+import Label from 'components/Label'
 import Link from 'components/Link'
 import Row from 'components/Row'
 import Text from 'components/Text'
@@ -28,8 +29,8 @@ const ProductCard = ({
       </Card>
     </Link>
     <Row className={styles.label}>
-      <Link href={href} className={cn(styles.link, Row.styles.grow)}>
-        {title && <Text mode={Text.MODES.heading}>{title}</Text>}
+      <Link href={href} className={Row.styles.grow} noStyles>
+        {title && <Text mode={Text.MODES.heading} className={styles.title}>{title}</Text>}
         {subtitle && (
           <Text mode={Text.MODES.caption} className={styles.subtitle}>
             {subtitle}
@@ -38,11 +39,7 @@ const ProductCard = ({
       </Link>
       <Link className={styles.buyBtn}>Buy</Link>
     </Row>
-    {label && (
-      <Text mode={Text.MODES.heading} allCaps className={styles.offsetLabel}>
-        {label}
-      </Text>
-    )}
+    {label && <Label position="top right">{label}</Label>}
   </Colorize>
 )
 

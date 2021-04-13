@@ -1,15 +1,28 @@
 @import 'styles/vars';
 
-.wrapper {}
+.wrapper {
+  --offset-size: 18px;
+}
+
+.label {
+  transform: translateX(calc(var(--offset-size) * -1));
+}
 
 .images {
   margin-bottom: 24px;
+  position: relative;
 }
+
+.images,
+.description {
+  padding-top: var(--offset-size);
+} 
 
 @media (min-width: $desktop-min-width) {
   .wrapper {
     display: grid;
     grid-gap: 24px;
     grid-template-columns: 2fr 1fr;
+    transform: none;
   }
 }
