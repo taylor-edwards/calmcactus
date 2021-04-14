@@ -4,10 +4,10 @@ import Head from 'components/Head'
 import ImageGrid from 'components/ImageGrid'
 import Label from 'components/Label'
 import Text from 'components/Text'
-import { products } from 'data'
 import styles from 'styles/product-page.module.scss'
 
-export const getStaticProps = ({ params: { product } }) => {
+export const getStaticProps = async ({ params: { product } }) => {
+  const { products } = await require('data')
   return {
     props: {
       product: products.find(({ slug }) => slug === product),
@@ -15,7 +15,8 @@ export const getStaticProps = ({ params: { product } }) => {
   }
 }
 
-export const getStaticPaths = () => {
+export const getStaticPaths = async () => {
+  const { products } = await require('data')
   return {
     fallback: false,
     paths: products.map(({ slug }) => ({ params: { product: slug } })),

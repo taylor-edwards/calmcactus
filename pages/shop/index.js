@@ -1,10 +1,16 @@
 import Page from 'partials/Page'
 import Head from 'components/Head'
 import ProductCard from 'components/ProductCard'
-import { products } from 'data'
 import styles from 'styles/shop.module.scss'
 
-const Shop = () => (
+export const getStaticProps = async () => {
+  const { products } = await require('data')
+  return {
+    props: { products },
+  }
+}
+
+const Shop = ({ products }) => (
   <Page>
     <Head>
       <title>Shop | Calm Cactus</title>
