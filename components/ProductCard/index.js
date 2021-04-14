@@ -29,7 +29,11 @@ const ProductCard = ({
     </Link>
     <Row className={styles.label}>
       <Link href={href} className={Row.styles.grow} noStyles>
-        {title && <Text mode={Text.MODES.heading} className={styles.title}>{title}</Text>}
+        {title && (
+          <Text mode={Text.MODES.heading} className={styles.title}>
+            {title}
+          </Text>
+        )}
         {subtitle && (
           <Text mode={Text.MODES.caption} className={styles.subtitle}>
             {subtitle}

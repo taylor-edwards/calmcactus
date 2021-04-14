@@ -2,8 +2,8 @@
 
 .wrapper {
   --offset-size: 18px;
-  
-  box-sizing: border-box;
+
+  padding-right: var(--offset-size);
   padding-top: var(--offset-size);
   position: relative;
   width: 100%;
@@ -12,7 +12,6 @@
 .link {
   color: inherit;
 }
-
 
 .wrapper:hover,
 .wrapper:focus {
@@ -57,6 +56,6 @@
 
 @media (min-width: $tablet-min-width) {
   .wrapper {
-    padding-right: var(--offset-size);
+    box-sizing: border-box;
   }
 }
