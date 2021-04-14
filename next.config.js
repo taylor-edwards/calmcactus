@@ -1,5 +1,6 @@
 module.exports = {
+  distDir: 'build',
   images: {
-    domains: ['calmcactus.com'],
+    domains: ['calmcact.us'],
   },
 }
