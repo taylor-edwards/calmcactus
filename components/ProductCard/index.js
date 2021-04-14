@@ -1,6 +1,5 @@
 import { cn } from 'utils'
 import AspectRatio from 'components/AspectRatio'
-import Card from 'components/Card'
 import Colorize from 'components/Colorize'
 import Image from 'components/Image'
 import Label from 'components/Label'
@@ -20,13 +19,13 @@ const ProductCard = ({
 }) => (
   <Colorize className={cn(styles.wrapper, className)} color={color}>
     <Link href={href} title={title}>
-      <Card className={styles.image}>
+      <div className={styles.image}>
         <AspectRatio ratio={1}>
           {images.length > 0 && (
             <Image src={images[0].src} className={styles.content} />
           )}
         </AspectRatio>
-      </Card>
+      </div>
     </Link>
     <Row className={styles.label}>
       <Link href={href} className={Row.styles.grow} noStyles>

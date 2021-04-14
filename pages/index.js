@@ -1,24 +1,22 @@
 import Head from 'next/head'
-import Image from 'components/Image'
-import styles from 'styles/Home.module.scss'
+import Icon from 'components/Icon'
+import styles from 'styles/home.module.scss'
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Calm Cactus</title>
-      </Head>
+const Home = () => (
+  <div className={styles.container}>
+    <Head>
+      <title>Calm Cactus</title>
+    </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          <Image src="/assets/cclogo.svg" alt="Calm Cactus" />
-        </h1>
+    <main className={styles.main}>
+      <h1 className={styles.title}>
+        <Icon name="cclogo" alt="Calm Cactus" size={300} />
+      </h1>
 
-        <p className={styles.description}>
-          See you soon
-        </p>
-        <p className={styles.smiley}>&#9787;</p>
-      </main>
-    </div>
-  )
-}
+      <p className={styles.description}>See you soon</p>
+      <p className={styles.smiley}>&#9787;</p>
+    </main>
+  </div>
+)
+
+export default Home

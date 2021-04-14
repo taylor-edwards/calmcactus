@@ -8,16 +8,14 @@
   --sweater-black: #{$sweater-black};
   --white: #{$white};
 
-  --primary-fill: var(--white);
-  --primary-text: var(--black);
-  --secondary-fill: var(--white);
-  --secondary-text: var(--sweater-black);
+  --default-fill: var(--white);
+  --default-text: var(--black);
 
-  --accent-default: var(--coral);
+  --accent: var(--coral);
   --accent-hover: var(--coral);
   --accent-active: var(--coral);
 
-  --pattern-fill: url(/assets/topography.png) var(--primary-fill);
+  --pattern-fill: url(/assets/topography.png) var(--default-fill);
   --default-font: "Red Hat Text", sans-serif;
   --accent-font: "Bodoni Moda", serif;
 
@@ -29,14 +27,10 @@
 /*
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-fill: #000;
-    --primary-text: #f0f0f0;
-    --secondary-fill: #282828;
-    --secondary-text: #fefefe;
-    --accent-default: #fc4;
-    --accent-hover: #ea2;
-    --accent-active: #d80;
-    --pattern-fill: url(/assets/topography-dark.png) var(--primary-fill);
+    --default-fill: var(--black);
+    --default-text: var(--white);
+
+    --pattern-fill: url(/assets/topography-dark.png) var(--default-fill);
   }
 }
 */
@@ -166,7 +160,7 @@
 
 html {
   background: var(--pattern-fill);
-  color: var(--primary-text);
+  color: var(--default-text);
   font-family: var(--default-font);
 }
 

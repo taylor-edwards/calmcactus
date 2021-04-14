@@ -17,22 +17,14 @@
   padding: 5rem 0;
 }
 
-
 .title {
   margin: 0 0 24px;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
 }
 
 .description,
 .smiley {
-  color: var(--accent-default);
-  line-height: 32px;
+  color: var(--accent);
+  line-height: 38px;
 }
 
 .description {

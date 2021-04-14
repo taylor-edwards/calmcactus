@@ -24,22 +24,17 @@
 }
 
 .primary {
-    --fill: var(--primary-fill);
-    --text: var(--primary-text);
-}
-
-.secondary {
-    --fill: var(--secondary-fill);
-    --text: var(--secondary-text);
+    --fill: var(--default-fill);
+    --text: var(--default-text);
 }
 
 .pattern {
     --fill: var(--pattern-fill);
-    --text: var(--primary-text);
+    --text: var(--default-text);
 }
 
 .accent {
-    --fill: var(--accent-default);
+    --fill: var(--accent);
     --text: var(--white);
 }
 
