@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import useID from 'hooks/useID'
 
 const observeElement = (() => {
@@ -43,7 +43,8 @@ const observeElement = (() => {
   }
 })()
 
-const useVisibility = (ref, initiallyVisible = false) => {
+const useVisibility = (initiallyVisible = false) => {
+  const ref = useRef(null)
   const scopeID = useID([ref])
 
   const [visibility, setVisibility] = useState({
@@ -73,7 +74,7 @@ const useVisibility = (ref, initiallyVisible = false) => {
     return () => destroyObserver()
   }, [ref])
 
-  return visibility
+  return [visibility, ref]
 }
 
 export default useVisibility

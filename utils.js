@@ -1,15 +1,15 @@
 export const cn = (...args) =>
   args
-    .reduce((acc, next) => {
-      switch (typeof next) {
-        case 'string':
-          return `${acc} ${next}`
+    .reduce((classString, classData) => {
+      switch (true) {
+        case typeof classData === 'string':
+          return `${classString} ${classData}`
 
-        case 'object': {
-          if (Array.isArray(next)) {
-            return `${acc}${cn(...next)}`
-          }
-          const names = Object.entries(next)
+        case Array.isArray(classData):
+          return `${classString}${cn(...classData)}`
+
+        case typeof classData === 'object': {
+          const names = Object.entries(classData)
             .filter(([, condition]) => {
               switch (typeof condition) {
                 case 'boolean':
@@ -21,26 +21,22 @@ export const cn = (...args) =>
               }
             })
             .map(([name]) => name)
-          return [acc, ...names].join(' ')
+          return [classString, ...names].join(' ')
         }
 
         default:
-          return acc
+          return classString
       }
     }, '')
     .replace(/(^\s+|\s+$)/g, '')
 
 export const range = (m, n) => {
-  const a = []
-  if (typeof n === 'number') {
-    const delta = Math.sign(n - m)
-    for (let i = m; delta > 0 ? i <= n : i >= n; i += delta) {
-      a.push(i)
-    }
-  } else {
-    for (let i = 0; i < m; i++) {
-      a.push(i)
-    }
+  const list = []
+  const delta = Math.sign(n - m)
+  let i = m
+  while (delta > 0 ? i < n : i > n) {
+    list.push(i)
+    i += delta
   }
-  return a
+  return list
 }

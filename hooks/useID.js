@@ -3,13 +3,14 @@ import { range } from 'utils'
 
 const useID = (deps = []) => {
   const chars = 'ABCDEFGHKMNPQRSTUVWXYZabcdefghkmnpqrstuvwxyz0123456789'
-  return useMemo(
+  const id = useMemo(
     () =>
-      range(16)
+      range(0, 16)
         .map(() => chars[Math.floor(Math.random() * chars.length)])
         .join(''),
     deps,
   )
+  return id
 }
 
 export default useID
