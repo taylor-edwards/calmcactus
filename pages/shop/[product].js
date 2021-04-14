@@ -1,5 +1,6 @@
 import Page from 'partials/Page'
 import Colorize from 'components/Colorize'
+import Head from 'components/Head'
 import ImageGrid from 'components/ImageGrid'
 import Label from 'components/Label'
 import Text from 'components/Text'
@@ -23,6 +24,9 @@ export const getStaticPaths = () => {
 
 const ProductPage = ({ product }) => (
   <Page>
+    <Head>
+      <title>{product.title} | Calm Cactus</title>
+    </Head>
     <Colorize className={styles.wrapper} color={product.color}>
       <div className={styles.images}>
         <Label position="top left" className={styles.label}>{product.label}</Label>

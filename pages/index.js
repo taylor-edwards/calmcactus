@@ -1,13 +1,8 @@
-import Head from 'next/head'
 import Icon from 'components/Icon'
 import styles from 'styles/home.module.scss'
 
 const Home = () => (
   <div className={styles.container}>
-    <Head>
-      <title>Calm Cactus</title>
-    </Head>
-
     <main className={styles.main}>
       <h1 className={styles.title}>
         <Icon name="cclogo" alt="Calm Cactus" size={300} />
