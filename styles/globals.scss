@@ -24,6 +24,7 @@
   --outer-bevel: 0;
 }
 
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --default-fill: var(--black);
@@ -32,6 +33,7 @@
     --pattern-fill: url(/assets/topography-dark.png) var(--default-fill);
   }
 }
+*/
 
 @media (min-width: $tablet-min-width) {
   :root {
