@@ -1,0 +1,25 @@
+@import "styles/vars";
+
+.content {
+  display: grid;
+  grid-gap: 24px;
+}
+
+.description {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+.image {
+  border-radius: var(--inner-bevel);
+}
+
+.link {
+  font-weight: 700;
+}
+
+@media (min-width: $desktop-min-width) {
+  .content {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -8,7 +8,14 @@ const Div = ({ children, className }) => (
   <div className={className}>{children}</div>
 )
 
-const ProductLabel = ({ className, href, title, subtitle, ...props }) => {
+const ProductLabel = ({
+  children,
+  className,
+  href,
+  subtitle,
+  title,
+  ...props
+}) => {
   const Wrapper = href ? Link : Div
   return (
     <Row
@@ -19,12 +26,13 @@ const ProductLabel = ({ className, href, title, subtitle, ...props }) => {
     >
       <Wrapper href={href} className={Row.styles.grow} noStyles>
         {title && (
-          <Text mode={Text.MODES.heading} className={styles.title}>
+          <Text mode={Text.MODES.heading} className={styles.title} noWrap>
             {title}
           </Text>
         )}
         {subtitle && <Text mode={Text.MODES.caption}>{subtitle}</Text>}
       </Wrapper>
+      {children}
     </Row>
   )
 }

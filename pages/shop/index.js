@@ -3,12 +3,9 @@ import Head from 'components/Head'
 import ProductCard from 'components/ProductCard'
 import styles from 'styles/shop.module.scss'
 
-export const getStaticProps = async () => {
-  const { products } = await require('data')
-  return {
-    props: { products },
-  }
-}
+export const getStaticProps = async () => ({
+  props: { products: await require('data').products },
+})
 
 const Shop = ({ products }) => (
   <Page>

@@ -1,3 +1,11 @@
+export const about = {
+  contactEmail: 'hello@calmcact.us',
+  title: 'Hi! Nice to see you.',
+  body:
+    'Calm Cactus is a small art shop making limited batched goods for you and your home. The goal is to have fun making things that might bring a smile to your life. CC is a one person shop, so please be patient for new goods & re-stocking. Some items are made on-demand and take up to a few weeks to make, pass quality inspection and be sent off to your home. All packages are sent via USPS. Domestic shipping only.',
+  imageSrc: 'https://via.placeholder.com/1000/aaa/272727&text=ABOUT',
+}
+
 export const products = [
   {
     title: 'GROW THROW',
