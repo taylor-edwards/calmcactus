@@ -1,4 +1,5 @@
 import { cn } from 'utils'
+import { social } from 'data'
 import Icon from 'components/Icon'
 import Link from 'components/Link'
 import Text from 'components/Text'
@@ -16,10 +17,10 @@ const Nav = ({ className }) => (
       <Link className={styles.link} href="/about">
         <Text mode={Text.MODES.heading} allCaps>About</Text>
       </Link>
-      <Link className={styles.link} href="/about">
+      <Link className={styles.link} href={social.instagram}>
         <Icon name="instagram" alt="Calm Cactus on Instagram" />
       </Link>
-      <Link className={styles.link} href="/about">
+      <Link className={styles.link} href={social.twitter}>
         <Icon name="twitter" alt="Calm Cactus on Twitter" />
       </Link>
     </div>

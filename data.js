@@ -6,6 +6,11 @@ export const about = {
   imageSrc: 'https://via.placeholder.com/1000/aaa/272727&text=ABOUT',
 }
 
+export const social = {
+  instagram: 'https://www.instagram.com/calmcactusgoods/',
+  twitter: 'https://twitter.com/calmcactusgoods',
+}
+
 export const products = [
   {
     title: 'GROW THROW',
