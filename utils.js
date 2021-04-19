@@ -1,28 +1,23 @@
-export const cn = (...args) =>
-  args
+export const noop = () => {}
+
+export const cn = (...inputs) =>
+  inputs
     .reduce((classString, classData) => {
       switch (true) {
         case typeof classData === 'string':
           return `${classString} ${classData}`
 
         case Array.isArray(classData):
-          return `${classString}${cn(...classData)}`
+          return `${classString} ${cn(...classData)}`
 
-        case typeof classData === 'object': {
-          const names = Object.entries(classData)
-            .filter(([, condition]) => {
-              switch (typeof condition) {
-                case 'boolean':
-                  return condition
-                case 'function':
-                  return condition()
-                default:
-                  return !!condition
-              }
-            })
-            .map(([name]) => name)
-          return [classString, ...names].join(' ')
-        }
+        case typeof classData === 'object':
+          return [classString]
+            .concat(
+              Object.entries(classData)
+                .filter(([, condition]) => !!condition)
+                .map(([className]) => className),
+            )
+            .join(' ')
 
         default:
           return classString

@@ -1,4 +1,4 @@
-@import 'styles/vars';
+@import "styles/vars";
 
 .wrapper {
   --offset-size: 18px;
@@ -7,17 +7,6 @@
   padding-top: var(--offset-size);
   position: relative;
   width: 100%;
-}
-
-.link {
-  color: inherit;
-}
-
-.wrapper:hover,
-.wrapper:focus {
-  .title {
-    color: var(--fill);
-  }
 }
 
 .content {
@@ -29,29 +18,7 @@
 }
 
 .label {
-  margin: 12px 0;
-  padding: 6px 18px 6px 24px;
-  position: relative;
-}
-
-.label::before {
-  background: var(--fill);
-  content: "";
-  border-radius: 6px;
-  left: 0;
-  top: 0;
-  height: 100%;
-  position: absolute;
-  width: 6px;
-}
-
-.buyBtn {
-  align-items: center;
-  color: inherit;
-  display: flex;
-  font-weight: bold;
-  justify-content: center;
-  margin-left: 12px;
+  margin-top: 12px;
 }
 
 @media (min-width: $tablet-min-width) {

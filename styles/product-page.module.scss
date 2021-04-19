@@ -1,6 +1,7 @@
 @import 'styles/vars';
 
 .wrapper {
+  // offset and position used for price label
   --offset-size: 18px;
 }
 
@@ -9,20 +10,30 @@
 }
 
 .images {
-  margin-bottom: 24px;
   position: relative;
 }
 
 .images,
-.description {
+.info {
   padding-top: var(--offset-size);
-} 
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  flex-grow: 1;
+  margin: 18px 0 24px;
+  padding-left: 24px;
+}
 
 @media (min-width: $desktop-min-width) {
   .wrapper {
     display: grid;
     grid-gap: 24px;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 2fr;
     transform: none;
   }
 }

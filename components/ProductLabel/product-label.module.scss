@@ -1,0 +1,24 @@
+@import "styles/vars";
+
+.label {
+  padding: 4px 18px 8px 24px;
+  position: relative;
+}
+
+.label::before {
+  background: var(--fill);
+  content: "";
+  border-radius: 6px;
+  left: 0;
+  top: 0;
+  height: 100%;
+  position: absolute;
+  width: 6px;
+}
+
+.link:hover,
+.link:focus {
+  .title {
+    color: var(--fill);
+  }
+}

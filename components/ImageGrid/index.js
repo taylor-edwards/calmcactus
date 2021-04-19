@@ -1,13 +1,24 @@
-import { useState } from 'react'
-import { cn } from 'utils'
+import { useEffect, useState } from 'react'
+import { cn, noop } from 'utils'
 import Button from 'components/Button'
 import Image from 'components/Image'
 import styles from './image-grid.module.scss'
 
 const MAX_ITEMS = 3
 
-const ImageGrid = ({ images, className, ...props }) => {
-  const [selection, setSelection] = useState(0)
+const ImageGrid = ({
+  className,
+  images,
+  onSelect = noop,
+  selectedIndex = 0,
+  ...props
+}) => {
+  const [selection, setSelection] = useState(selectedIndex)
+  useEffect(() => setSelection(selectedIndex), [selectedIndex])
+  const handleSelection = index => {
+    setSelection(index)
+    onSelect(index)
+  }
   const selectedImage = images[selection]
   return (
     <div className={cn(styles.wrapper, className)} {...props}>
@@ -17,7 +28,7 @@ const ImageGrid = ({ images, className, ...props }) => {
       {images.slice(0, MAX_ITEMS).map(({ src }, i) => (
         <Button
           key={src}
-          onClick={() => setSelection(i)}
+          onClick={() => handleSelection(i)}
           className={styles.thumbnail}
         >
           <Image src={src} className={styles.image} />

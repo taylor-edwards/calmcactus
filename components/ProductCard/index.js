@@ -4,8 +4,7 @@ import Colorize from 'components/Colorize'
 import Image from 'components/Image'
 import Label from 'components/Label'
 import Link from 'components/Link'
-import Row from 'components/Row'
-import Text from 'components/Text'
+import ProductLabel from 'components/ProductLabel'
 import styles from './product-card.module.scss'
 
 const ProductCard = ({
@@ -27,21 +26,12 @@ const ProductCard = ({
         </AspectRatio>
       </div>
     </Link>
-    <Row className={styles.label}>
-      <Link href={href} className={Row.styles.grow} noStyles>
-        {title && (
-          <Text mode={Text.MODES.heading} className={styles.title}>
-            {title}
-          </Text>
-        )}
-        {subtitle && (
-          <Text mode={Text.MODES.caption} className={styles.subtitle}>
-            {subtitle}
-          </Text>
-        )}
-      </Link>
-      <Link className={styles.buyBtn}>Buy</Link>
-    </Row>
+    <ProductLabel
+      className={styles.label}
+      href={href}
+      subtitle={subtitle}
+      title={title}
+    />
     {label && <Label position="top right">{label}</Label>}
   </Colorize>
 )

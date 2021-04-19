@@ -3,6 +3,7 @@ import Colorize from 'components/Colorize'
 import Head from 'components/Head'
 import ImageGrid from 'components/ImageGrid'
 import Label from 'components/Label'
+import ProductLabel from 'components/ProductLabel'
 import Text from 'components/Text'
 import styles from 'styles/product-page.module.scss'
 
@@ -30,22 +31,26 @@ const ProductPage = ({ product }) => (
     </Head>
     <Colorize className={styles.wrapper} color={product.color}>
       <div className={styles.images}>
-        <Label position="top left" className={styles.label}>{product.label}</Label>
+        <Label position="top left" className={styles.label}>
+          {product.label}
+        </Label>
         <ImageGrid images={product.images} />
       </div>
-      <div className={styles.description}>
-        <Text element="h1" mode={Text.MODES.heading}>
-          {product.title}
-        </Text>
-        <Text element="p">{product.subtitle}</Text>
 
-        <Text mode={Text.MODES.subheading} allCaps>
-          Limited stock
-        </Text>
+      <div className={styles.info}>
+        <ProductLabel title={product.title} subtitle={product.subtitle} />
 
-        <Text mode={Text.MODES.body}>
-          {product.description ?? 'No description'}
-        </Text>
+        <div className={styles.description}>
+          <Text mode={Text.MODES.body}>
+            {product.description ?? 'No description'}
+          </Text>
+        </div>
+
+        <ProductLabel
+          title="Continue to checkout"
+          subtitle="You have 5 items in your cart"
+          href="/shop/checkout"
+        />
       </div>
     </Colorize>
   </Page>
