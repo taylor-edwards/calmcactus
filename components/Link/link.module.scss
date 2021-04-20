@@ -1,17 +1,21 @@
 .link {
-  color: inherit;
+  color: var(--heavy-fill, var(--fill), var(--accent));
   cursor: pointer;
   outline: 0;
   text-decoration: none;
 }
 
+.link.inherit {
+  color: inherit;
+}
+
 .link:hover,
 .link:focus {
-  color: var(--accent-hover);
+  color: var(--fill, var(--accent-hover));
 }
 
 .link:active {
-  color: var(--accent-active);
+  color: var(--heavy-fill, var(--fill), var(--accent-active));
 }
 
 .link:disabled {

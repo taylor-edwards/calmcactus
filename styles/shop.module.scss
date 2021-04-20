@@ -1,12 +1,12 @@
-@import 'styles/vars';
+@import "styles/vars";
 
-.products {}
-
+.products {
+  display: grid;
+  grid-gap: 20px;
+}
 
 @media (min-width: $tablet-min-width) {
   .products {
-    display: grid;
-    grid-gap: 20px;
     grid-template-columns: 1fr 1fr;
   }
 }

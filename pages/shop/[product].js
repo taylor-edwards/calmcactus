@@ -1,5 +1,4 @@
 import Page from 'partials/Page'
-import Colorize from 'components/Colorize'
 import Head from 'components/Head'
 import ImageGrid from 'components/ImageGrid'
 import Label from 'components/Label'
@@ -25,11 +24,11 @@ export const getStaticPaths = async () => {
 }
 
 const ProductPage = ({ product }) => (
-  <Page>
+  <Page color={product.color}>
     <Head>
       <title>{product.title} | Calm Cactus</title>
     </Head>
-    <Colorize className={styles.wrapper} color={product.color}>
+    <div className={styles.wrapper}>
       <div className={styles.images}>
         <Label position="top left" className={styles.label}>
           {product.label}
@@ -52,7 +51,7 @@ const ProductPage = ({ product }) => (
           href="/shop/checkout"
         />
       </div>
-    </Colorize>
+    </div>
   </Page>
 )
 

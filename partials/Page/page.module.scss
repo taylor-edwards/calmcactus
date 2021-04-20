@@ -1,4 +1,4 @@
-@import 'styles/vars';
+@import "styles/vars";
 
 .page {
   margin: 0 auto;
@@ -7,7 +7,8 @@
 }
 
 .icon {
-  margin: 48px 0 36px;
+  color: var(--fill);
+  margin: 80px 0 50px;
   max-width: 70px;
 }
 

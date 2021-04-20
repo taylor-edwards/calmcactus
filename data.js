@@ -25,7 +25,7 @@ export const products = [
     ],
   },
   {
-    title: 'ARTWORK NAME',
+    title: 'Artwork name',
     label: '$120',
     subtitle: 'Materials used. Contributions',
     slug: 'artwork1',
@@ -37,11 +37,11 @@ export const products = [
     ],
   },
   {
-    title: 'ARTWORK NAME',
+    title: 'Artwork name',
     label: '$10',
     subtitle: 'Materials used. Contributions',
     slug: 'artwork2',
-    color: 'saltBlue',
+    color: 'salt-blue',
     images: [
       { src: 'https://via.placeholder.com/1000/aaa/272727&text=G' },
       { src: 'https://via.placeholder.com/1000/aaa/272727&text=H' },
@@ -49,11 +49,11 @@ export const products = [
     ],
   },
   {
-    title: 'ARTWORK NAME',
+    title: 'Artwork name',
     label: '$50',
     subtitle: 'Materials used. Contributions',
     slug: 'artwork3',
-    color: 'saltBlue',
+    color: 'salt-blue',
     images: [
       { src: 'https://via.placeholder.com/1000/aaa/272727&text=J' },
       { src: 'https://via.placeholder.com/1000/aaa/272727&text=K' },
@@ -61,7 +61,7 @@ export const products = [
     ],
   },
   {
-    title: 'ARTWORK NAME',
+    title: 'Artwork name',
     label: 'Coming soon',
     subtitle: 'Materials used. Contributions',
     slug: 'artwork4',
@@ -73,7 +73,7 @@ export const products = [
     ],
   },
   {
-    title: 'ARTWORK NAME',
+    title: 'Artwork name',
     label: '$25',
     subtitle: 'Materials used. Contributions',
     slug: 'artwork5',

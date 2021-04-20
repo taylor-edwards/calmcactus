@@ -1,40 +1,46 @@
+@import "styles/vars";
+
+.inherit {}
+
 .coral {
-    --fill: var(--coral);
-    --text: var(--white);
+  --fill: var(--coral);
+  --heavy-fill: var(--coral-heavy);
+  --text: var(--white);
 }
 
 .canary {
-    --fill: var(--canary);
-    --text: var(--sweater-black);
+  --fill: var(--canary);
+  --heavy-fill: var(--canary-heavy);
+  --text: var(--sweater-black);
 }
 
-.saltBlue {
-    --fill: var(--salt-blue);
-    --text: var(--white);
+.salt-blue {
+  --fill: var(--salt-blue);
+  --heavy-fill: var(--salt-blue-heavy);
+  --text: var(--white);
 }
 
-.sweaterBlack {
-    --fill: var(--sweater-black);
-    --text: var(--white);
+.sweater-black {
+  --fill: var(--sweater-black);
+  --text: var(--white);
 }
 
 .white {
-    --fill: var(--white);
-    --text: var(--sweater-black);
+  --fill: var(--white);
+  --text: var(--sweater-black);
 }
 
 .primary {
-    --fill: var(--default-fill);
-    --text: var(--default-text);
+  --fill: var(--default-fill);
+  --text: var(--default-text);
 }
 
 .pattern {
-    --fill: var(--pattern-fill);
-    --text: var(--default-text);
+  --fill: var(--pattern-fill);
+  --text: var(--default-text);
 }
 
 .accent {
-    --fill: var(--accent);
-    --text: var(--white);
+  --fill: var(--accent);
+  --text: var(--white);
 }
-

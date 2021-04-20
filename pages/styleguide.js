@@ -23,7 +23,7 @@ const StyleGuide = () => (
       Child starts with a string <span>but includes an element</span>, then
       resumes with more&hellip;, text! <span>bonus element</span>
     </Text>
-    <Text>
+    <Text maxLength={600}>
       <span>Child is just elements</span>
       <br />
       <span>Wowza!</span>

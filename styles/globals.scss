@@ -1,12 +1,16 @@
-@import 'styles/vars';
+@import "styles/vars";
 
 :root {
-  --black: #{$black};
-  --canary: #{$canary};
-  --coral: #{$coral};
-  --salt-blue: #{$salt-blue};
-  --sweater-black: #{$sweater-black};
   --white: #{$white};
+  --sweater-black: #{$sweater-black};
+  --black: #{$black};
+
+  --canary: #{$canary};
+  --canary-heavy: #{darken($canary, 16%)};
+  --coral: #{$coral};
+  --coral-heavy: #{mix($coral, $sweater-black, 92%)};
+  --salt-blue: #{$salt-blue};
+  --salt-blue-heavy: #{darken($salt-blue, 15%)};
 
   --default-fill: var(--white);
   --default-text: var(--black);
@@ -24,16 +28,14 @@
   --outer-bevel: 0;
 }
 
-/*
-@media (prefers-color-scheme: dark) {
-  :root {
-    --default-fill: var(--black);
-    --default-text: var(--white);
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     --default-fill: var(--black);
+//     --default-text: var(--white);
 
-    --pattern-fill: url(/assets/topography-dark.png) var(--default-fill);
-  }
-}
-*/
+//     --pattern-fill: url(/assets/topography-dark.png) var(--default-fill);
+//   }
+// }
 
 @media (min-width: $tablet-min-width) {
   :root {

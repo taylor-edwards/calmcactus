@@ -1,5 +1,4 @@
 import Page from 'partials/Page'
-import Colorize from 'components/Colorize'
 import Head from 'components/Head'
 import Image from 'components/Image'
 import Link from 'components/Link'
@@ -16,7 +15,7 @@ const About = ({ contactEmail, title, body, imageSrc }) => (
     <Head>
       <title>About | Calm Cactus</title>
     </Head>
-    <Colorize className={styles.content}>
+    <div className={styles.content}>
       <Image src={imageSrc} className={styles.image} />
 
       <div>
@@ -34,7 +33,7 @@ const About = ({ contactEmail, title, body, imageSrc }) => (
           Thanks for the support and have fun :)
         </Text>
       </div>
-    </Colorize>
+    </div>
   </Page>
 )
 

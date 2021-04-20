@@ -1,7 +1,7 @@
 @import "styles/vars";
 
 .label {
-  padding: 4px 18px 8px 24px;
+  padding: 6px 18px 14px 24px;
   position: relative;
 }
 
@@ -23,6 +23,6 @@
 .link:hover,
 .link:focus {
   .title {
-    color: var(--fill);
+    color: var(--heavy-fill, var(--fill));
   }
 }

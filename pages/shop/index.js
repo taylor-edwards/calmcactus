@@ -8,7 +8,7 @@ export const getStaticProps = async () => ({
 })
 
 const Shop = ({ products }) => (
-  <Page>
+  <Page color="inherit">
     <Head>
       <title>Shop | Calm Cactus</title>
     </Head>
