@@ -58,7 +58,7 @@ export const products = [
     title: 'Post (Gold)',
     label: 'Sold out',
     subtitle: 'Recycled wood & polyurethane coating',
-    slug: 'post-silver',
+    slug: 'post-gold',
     color: 'canary',
     description:
       'Post is a simple touch of nature for any style. Post is cut, sanded and coated with polyurethane to add shine and protect the finish. Accented with gold plated hook & screw ring. Limited Edition',
@@ -142,7 +142,7 @@ export const products = [
     title: 'OASIS Mini Print',
     label: 'Sold out',
     subtitle: 'Digitally illustrated print',
-    slug: 'grow-throw',
+    slug: 'oasis-mini-print',
     color: 'salt-blue',
     description:
       'OASIS mini print inspired by DUNE by Frank Herbert. OASIS is the first of 4 mini prints focusing on mysterious neon sands. Measures roughly 4.5x5.5in. Digitally illustrated. Limited Stock.',
@@ -156,7 +156,7 @@ export const products = [
     title: 'ORACLE Mini Print',
     label: 'Sold out',
     subtitle: 'Digitally illustrated print',
-    slug: 'grow-throw',
+    slug: 'oracle-mini-print',
     color: 'canary',
     description:
       'ORACLE mini print inspired by DUNE by Frank Herbert. OASIS is the second of 4 mini prints focusing on mysterious neon sands. Measures roughly 6x4in. Digitally illustrated. Limited Stock.',
@@ -170,7 +170,7 @@ export const products = [
     title: 'CARETAKER Mini Print',
     label: 'Sold out',
     subtitle: 'Digitally illustrated print',
-    slug: 'grow-throw',
+    slug: 'caretaker-mini-print',
     color: 'coral',
     description:
       'CARETAKER mini print inspired by DUNE by Frank Herbert. OASIS is the third of 4 mini prints focusing on mysterious neon sands. Measures roughly 4x6in. Digitally illustrated. Limited Stock.',
@@ -184,7 +184,7 @@ export const products = [
     title: 'STARGAZER Mini Print',
     label: 'Sold out',
     subtitle: 'Digitally illustrated print',
-    slug: 'grow-throw',
+    slug: 'stargazer-mini-print',
     color: 'salt-blue',
     description:
       'STARGAZER mini print inspired by DUNE by Frank Herbert. OASIS is the fourth of 4 mini prints focusing on mysterious neon sands. Measures roughly 6x4in. Digitally illustrated. Limited Stock.',
@@ -198,7 +198,7 @@ export const products = [
     title: 'NEON SANDS Mini Print Set',
     label: 'Sold out',
     subtitle: 'Digitally illustrated print',
-    slug: 'grow-throw',
+    slug: 'neon-sands-mini-print-set',
     color: 'coral',
     description:
       'The NEON SANDS mini print set are inspired by the literature marvel DUNE by Frank Herbert. The set contains OASIS (4.5x5in), ORACLE (6x4in), CARETAKER (4x6in) and STARGAZER (6x4in). Add a bit of neon sand and discovery to your office space or any part of your home. Digitally illustrated. Limited Stock.',
