@@ -6,11 +6,11 @@
   --black: #{$black};
 
   --canary: #{$canary};
-  --canary-heavy: #{darken($canary, 16%)};
+  --canary-heavy: #{$mustard};
   --coral: #{$coral};
-  --coral-heavy: #{mix($coral, $sweater-black, 92%)};
+  --coral-heavy: #{$cranberry};
   --salt-blue: #{$salt-blue};
-  --salt-blue-heavy: #{darken($salt-blue, 15%)};
+  --salt-blue-heavy: #{$mountain-blue};
 
   --default-fill: var(--white);
   --default-text: var(--black);
