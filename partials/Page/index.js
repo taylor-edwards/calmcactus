@@ -8,10 +8,12 @@ const Page = ({ children, className, color, ...props }) => (
   <div className={cn(styles.page, className)} {...props}>
     <Colorize color={color}>
       <Nav inheritColor={color === 'inherit'} />
-      <main>
-        {children}
-      </main>
-      <Icon name="eye" className={styles.icon} size={65} />
+      <main>{children}</main>
+      <Icon
+        name="eye"
+        className={cn(styles.icon, { [styles.inherit]: color === 'inherit' })}
+        size={65}
+      />
     </Colorize>
   </div>
 )

@@ -12,6 +12,10 @@
   max-width: 70px;
 }
 
+.icon.inherit {
+  color: inherit;
+}
+
 @media (min-width: $tablet-min-width) {
   .page {
     padding: 0 40px;

@@ -15,10 +15,7 @@ const ImageGrid = ({
 }) => {
   const [selection, setSelection] = useState(selectedIndex)
   useEffect(() => setSelection(selectedIndex), [selectedIndex])
-  const handleSelection = index => {
-    setSelection(index)
-    onSelect(index)
-  }
+  useEffect(() => onSelect(selection), [selection])
   const selectedImage = images[selection]
   return (
     <div className={cn(styles.wrapper, className)} {...props}>
@@ -28,7 +25,7 @@ const ImageGrid = ({
       {images.slice(0, MAX_ITEMS).map(({ src }, i) => (
         <Button
           key={src}
-          onClick={() => handleSelection(i)}
+          onClick={() => setSelection(i)}
           className={cn(styles.thumbnail, {
             [styles.selected]: i === selection,
           })}

@@ -82,9 +82,12 @@ const Text = (
     <Element
       className={cn(
         mode,
-        inline ? styles.inline : styles.block,
-        allCaps && styles.uppercase,
-        noWrap && styles.noWrap,
+        {
+          [styles.inline]: inline,
+          [styles.block]: !inline,
+          [styles.uppercase]: allCaps,
+          [styles.noWrap]: noWrap,
+        },
         className,
       )}
       ref={ref}

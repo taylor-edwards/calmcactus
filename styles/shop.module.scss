@@ -1,18 +1,24 @@
 @import "styles/vars";
 
 .products {
+  --columns: 1;
   display: grid;
   grid-gap: 20px;
+  grid-template-columns: repeat(
+    var(--columns),
+    calc((1 / var(--columns)) * 100%)
+  );
 }
 
 @media (min-width: $tablet-min-width) {
   .products {
-    grid-template-columns: 1fr 1fr;
+    --columns: 2;
   }
 }
 
 @media (min-width: $desktop-min-width) {
   .products {
-    grid-template-columns: 1fr 1fr 1fr;
+    --columns: 3;
+    padding-right: 30px;
   }
 }
