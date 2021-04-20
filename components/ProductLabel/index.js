@@ -26,7 +26,7 @@ const ProductLabel = ({
     >
       <Wrapper href={href} className={Row.styles.grow} noStyles>
         {title && (
-          <Text mode={Text.MODES.heading} className={styles.title} noWrap>
+          <Text mode={Text.MODES.heading} className={styles.title}>
             {title}
           </Text>
         )}
