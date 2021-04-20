@@ -24,3 +24,19 @@
   overflow: hidden;
   width: 100%;
 }
+
+.thumbnail {
+  position: relative;
+}
+
+.thumbnail.selected::before {
+  background: var(--fill);
+  border-radius: 12px;
+  content: "";
+  height: 12px;
+  left: 0;
+  margin: 12px;
+  position: absolute;
+  top: 0;
+  width: 12px;
+}
