@@ -2,45 +2,44 @@
 
 .inherit {}
 
+.default {
+  --fill: var(--default-fill);
+  --stroke: var(--default-stroke);
+  --text: var(--default-text);
+}
+
 .coral {
-  --fill: var(--coral);
-  --heavy-fill: var(--coral-heavy);
-  --text: var(--white);
+  --fill: #{$coral};
+  --stroke: #{$cranberry};
+  --text: #{$white};
 }
 
 .canary {
-  --fill: var(--canary);
-  --heavy-fill: var(--canary-heavy);
-  --text: var(--sweater-black);
+  --fill: #{$canary};
+  --stroke: #{$mustard};
+  --text: #{$sweater-black};
 }
 
 .salt-blue {
-  --fill: var(--salt-blue);
-  --heavy-fill: var(--salt-blue-heavy);
-  --text: var(--white);
+  --fill: #{$salt-blue};
+  --stroke: #{$mountain-blue};
+  --text: #{$white};
 }
 
 .sweater-black {
-  --fill: var(--sweater-black);
-  --text: var(--white);
+  --fill: #{$sweater-black};
+  --stroke: #{$white};
+  --text: #{$white};
 }
 
 .white {
-  --fill: var(--white);
-  --text: var(--sweater-black);
-}
-
-.primary {
-  --fill: var(--default-fill);
-  --text: var(--default-text);
+  --fill: #{$white};
+  --stroke: #{$sweater-black};
+  --text: #{$sweater-black};
 }
 
 .pattern {
   --fill: var(--pattern-fill);
+  --stroke: var(--default-text);
   --text: var(--default-text);
-}
-
-.accent {
-  --fill: var(--accent);
-  --text: var(--white);
 }

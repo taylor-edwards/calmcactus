@@ -1,5 +1,5 @@
 .link {
-  color: var(--heavy-fill, var(--fill), var(--accent));
+  color: var(--stroke);
   cursor: pointer;
   outline: 0;
   text-decoration: none;
@@ -11,11 +11,11 @@
 
 .link:hover,
 .link:focus {
-  color: var(--fill, var(--accent-hover));
+  color: var(--fill);
 }
 
 .link:active {
-  color: var(--heavy-fill, var(--fill), var(--accent-active));
+  color: var(--stroke);
 }
 
 .link:disabled {

@@ -1,25 +1,15 @@
 @import "styles/vars";
 
 :root {
-  --white: #{$white};
-  --sweater-black: #{$sweater-black};
-  --black: #{$black};
-
-  --canary: #{$canary};
-  --canary-heavy: #{$mustard};
-  --coral: #{$coral};
-  --coral-heavy: #{$cranberry};
-  --salt-blue: #{$salt-blue};
-  --salt-blue-heavy: #{$mountain-blue};
-
-  --default-fill: var(--white);
-  --default-text: var(--black);
-
-  --accent: var(--coral);
-  --accent-hover: var(--coral);
-  --accent-active: var(--coral);
-
+  --default-fill: #{$white};
+  --default-stroke: transparent;
+  --default-text: #{$sweater-black};
   --pattern-fill: url(/assets/topography.png) var(--default-fill);
+
+  --fill: #{$coral};
+  --stroke: #{$cranberry};
+  --text: #{$white};
+
   --default-font: "Red Hat Text", sans-serif;
   --accent-font: "Bodoni Moda", serif;
 
@@ -30,9 +20,8 @@
 
 // @media (prefers-color-scheme: dark) {
 //   :root {
-//     --default-fill: var(--black);
-//     --default-text: var(--white);
-
+//     --default-fill: #{$sweater-black};
+//     --default-text: #{$white};
 //     --pattern-fill: url(/assets/topography-dark.png) var(--default-fill);
 //   }
 // }
