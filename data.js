@@ -10,6 +10,7 @@ export const about = {
 
 export const social = {
   domain: 'calmcact.us',
+  previewImage: '/assets/cclogo-preview.png',
   instagramHandle: 'calmcactusgoods',
   instagramURL: 'https://www.instagram.com/calmcactusgoods/',
   twitterHandle: '@calmcactusgoods',

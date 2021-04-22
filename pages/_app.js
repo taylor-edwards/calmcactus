@@ -1,5 +1,5 @@
 import { about, social } from 'data'
-import { Head, Meta, Title } from 'components/Helmet'
+import { Head, Meta, PreviewImage, Title } from 'components/Helmet'
 import 'styles/globals.scss'
 
 const App = ({ Component, pageProps }) => (
@@ -21,7 +21,7 @@ const App = ({ Component, pageProps }) => (
     <Meta name="twitter:creator" content={social.twitterHandle} />
     <Meta name="theme-color" content={about.brandColor} />
     <Meta name="msapplication-TileColor" content={about.brandColor} />
-    {/*<PreviewImage src="/assets/cclogo.svg" />*/}
+    <PreviewImage src={social.previewImage} />
     <Component {...pageProps} />
   </>
 )
