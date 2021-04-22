@@ -43,7 +43,11 @@ const ProductPage = ({ product }) => {
           <ImageGrid
             images={product.images}
             selectedIndex={imageIndex}
-            onSelect={i => replace(`${location.pathname}?img=${i}`)}
+            onSelect={i =>
+              replace(`${location.pathname}?img=${i}`, undefined, {
+                scroll: false,
+              })
+            }
           />
         </div>
 
