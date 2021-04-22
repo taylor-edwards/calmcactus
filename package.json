@@ -2,6 +2,7 @@
   "name": "calmcactus",
   "version": "1.0.0",
   "private": true,
+  "sideEffects": false,
   "scripts": {
     "start": "next dev",
     "export": "next build && next export -o docs"
