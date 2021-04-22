@@ -139,9 +139,9 @@ export const products = [
     description:
       'Blanket and tapestries have a rich story of being woven to tell stories and carry on tradition. This work is dedicated to growth. Pre-order coming soon. All blankets are woven in New York.',
     images: [
-      { src: 'https://via.placeholder.com/1000/fff/272727&text=GROW%20A' },
-      { src: 'https://via.placeholder.com/1000/fff/272727&text=GROW%20B' },
-      { src: 'https://via.placeholder.com/1000/fff/272727&text=GROW%20C' },
+      { src: '/photos/Grow1.jpg' },
+      { src: '/photos/Grow2.jpg' },
+      { src: '/photos/Grow3.jpg' },
     ],
   },
   {
