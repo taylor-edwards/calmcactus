@@ -28,17 +28,17 @@ const Nav = ({ className, inheritColor }) => (
       </Link>
       <Link
         className={styles.link}
-        href={social.instagram}
-        inherit={inheritColor}
-      >
-        <Icon name="instagram" alt="Calm Cactus on Instagram" />
-      </Link>
-      <Link
-        className={styles.link}
         href={social.twitter}
         inherit={inheritColor}
       >
         <Icon name="twitter" alt="Calm Cactus on Twitter" />
+      </Link>
+      <Link
+        className={styles.link}
+        href={social.instagram}
+        inherit={inheritColor}
+      >
+        <Icon name="instagram" alt="Calm Cactus on Instagram" />
       </Link>
     </div>
   </nav>

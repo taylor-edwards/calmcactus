@@ -5,6 +5,7 @@
   font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.01em;
+  line-height: 1.2;
 
   &.uppercase {
     letter-spacing: 0.02em;
@@ -16,6 +17,7 @@
   font-size: 24px;
   font-weight: 700;
   letter-spacing: 0.005em;
+  line-height: 1.5;
 
   &.uppercase {
     letter-spacing: 0.05em;
@@ -28,6 +30,7 @@
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.01em;
+  line-height: 1.5;
 
   &.uppercase {
     letter-spacing: 0.035em;
@@ -37,8 +40,9 @@
 .caption {
   font-family: var(--default-font);
   font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 0;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  line-height: 1.15;
 
   &.uppercase {
     letter-spacing: 0.04em;

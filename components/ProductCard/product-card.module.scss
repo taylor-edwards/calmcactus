@@ -10,11 +10,16 @@
 }
 
 .content {
-  border: 5px solid var(--fill);
+  border: 5px solid transparent;
   border-radius: var(--inner-bevel);
   box-sizing: border-box;
   height: 100%;
   width: 100%;
+
+  .wrapper:hover &,
+  .link:focus & {
+    border-color: var(--fill);
+  }
 }
 
 .label {

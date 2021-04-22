@@ -1,6 +1,5 @@
 import { cn } from 'utils'
 import Link from 'components/Link'
-import Row from 'components/Row'
 import Text from 'components/Text'
 import styles from './product-label.module.scss'
 
@@ -8,32 +7,24 @@ const Div = ({ children, className }) => (
   <div className={className}>{children}</div>
 )
 
-const ProductLabel = ({
-  children,
-  className,
-  href,
-  subtitle,
-  title,
-  ...props
-}) => {
-  const Wrapper = href ? Link : Div
+const ProductLabel = ({ className, href, subtitle, title }) => {
+  const hasHref = typeof href !== 'undefined'
+  const Wrapper = hasHref ? Link : Div
   return (
-    <Row
+    <Wrapper
+      href={href}
       className={cn(styles.label, className, {
-        [styles.link]: typeof href !== 'undefined',
+        [styles.link]: hasHref,
       })}
-      {...props}
+      noStyles
     >
-      <Wrapper href={href} className={Row.styles.grow} noStyles>
-        {title && (
-          <Text mode={Text.MODES.heading} className={styles.title}>
-            {title}
-          </Text>
-        )}
-        {subtitle && <Text mode={Text.MODES.caption}>{subtitle}</Text>}
-      </Wrapper>
-      {children}
-    </Row>
+      {title && (
+        <Text mode={Text.MODES.heading} className={styles.title}>
+          {title}
+        </Text>
+      )}
+      {subtitle && <Text mode={Text.MODES.caption}>{subtitle}</Text>}
+    </Wrapper>
   )
 }
 

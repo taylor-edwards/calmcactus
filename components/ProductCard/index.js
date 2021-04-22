@@ -17,7 +17,7 @@ const ProductCard = ({
   subtitle,
 }) => (
   <Colorize className={cn(styles.wrapper, className)} color={color}>
-    <Link href={href} title={title}>
+    <Link href={href} title={title} className={styles.link}>
       <div className={styles.image}>
         <AspectRatio ratio={1}>
           {images.length > 0 && (

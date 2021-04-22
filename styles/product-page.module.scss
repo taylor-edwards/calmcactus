@@ -25,7 +25,7 @@
 
 .description {
   flex-grow: 1;
-  margin: 18px 0 24px;
+  margin: 20px 0 60px;
   padding-left: 24px;
 }
 
@@ -35,5 +35,9 @@
     grid-gap: 24px;
     grid-template-columns: 3fr 2fr;
     transform: none;
+  }
+
+  .description {
+    margin: 18px 0 24px;
   }
 }
