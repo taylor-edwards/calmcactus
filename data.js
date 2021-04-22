@@ -77,7 +77,7 @@ export const products = [
     title: 'Elixir (Prototype)',
     label: 'Sold out',
     subtitle: 'Store bought metal, polymer clay & enamel paint',
-    slug: 'elixer-prototype',
+    slug: 'elixir-prototype',
     color: 'coral',
     description:
       'Elixir is one of a kind prototype earring set set made with a store bought, gold plated earring with polymer clay delicately added & baked into the negative space. Each is painted by hand with enamel paint to give an abstract feel of a mysterious elixir. Limited, one of a kind.',
