@@ -8,7 +8,7 @@ export const getStaticProps = async () => ({
 })
 
 const Shop = ({ products }) => (
-  <Page color="inherit">
+  <Page>
     <Title text="Shop | Calm Cactus" />
     <div className={styles.products}>
       {products.map(({ slug, ...product }) => (

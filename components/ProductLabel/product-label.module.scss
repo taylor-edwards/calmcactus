@@ -22,7 +22,9 @@
 }
 
 .title:only-child {
-  line-height: 48px;
+  align-items: center;
+  display: flex;
+  min-height: 40px;
 }
 
 .link:hover,

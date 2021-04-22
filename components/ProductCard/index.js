@@ -18,13 +18,11 @@ const ProductCard = ({
 }) => (
   <Colorize className={cn(styles.wrapper, className)} color={color}>
     <Link href={href} title={title} className={styles.link}>
-      <div className={styles.image}>
-        <AspectRatio ratio={1}>
-          {images.length > 0 && (
-            <Image src={images[0].src} className={styles.content} />
-          )}
-        </AspectRatio>
-      </div>
+      <AspectRatio ratio={1}>
+        {images.length > 0 && (
+          <Image src={images[0].src} className={styles.content} />
+        )}
+      </AspectRatio>
     </Link>
     <ProductLabel
       className={styles.label}

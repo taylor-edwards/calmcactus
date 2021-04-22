@@ -4,7 +4,7 @@ import Icon from 'components/Icon'
 import Nav from 'components/Nav'
 import styles from './page.module.scss'
 
-const Page = ({ children, className, color, ...props }) => (
+const Page = ({ children, className, color = 'inherit', ...props }) => (
   <div className={cn(styles.page, className)} {...props}>
     <Colorize color={color}>
       <Nav inheritColor={color === 'inherit'} />

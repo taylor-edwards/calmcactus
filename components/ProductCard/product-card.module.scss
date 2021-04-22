@@ -12,9 +12,7 @@
 .content {
   border: 5px solid transparent;
   border-radius: var(--inner-bevel);
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
+  overflow: hidden;
 
   .wrapper:hover &,
   .link:focus & {

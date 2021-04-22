@@ -66,8 +66,8 @@ const ProductPage = ({ product }) => {
 
           <ProductLabel
             title="Continue to checkout"
-            subtitle="You have 5 items in your cart"
-            href="/shop/checkout"
+            subtitle="You have 3 items in your cart"
+            href="/shop/cart"
           />
         </div>
       </div>
