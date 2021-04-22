@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import Page from 'partials/Page'
-import Head from 'components/Head'
+import { Title, PreviewImage, Meta, Description } from 'components/Helmet'
 import ImageGrid from 'components/ImageGrid'
 import Label from 'components/Label'
 import ProductLabel from 'components/ProductLabel'
@@ -29,9 +29,12 @@ const ProductPage = ({ product }) => {
   const imageIndex = query?.img && parseInt(query.img)
   return (
     <Page color={product.color}>
-      <Head>
-        <title>{product.title} | Calm Cactus</title>
-      </Head>
+      <Title text={`${product.title} | Calm Cactus`} />
+      <PreviewImage src={product.images[0]?.src} />
+      <Description text={product.description ?? ''} />
+      <Meta property="og:type" content="product.item" />
+      <Meta name="twitter:card" content="summary_large_image" />
+
       <div className={styles.wrapper}>
         <div className={styles.images}>
           <Label position="top left" className={styles.label}>

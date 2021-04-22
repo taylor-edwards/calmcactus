@@ -1,5 +1,5 @@
 import Page from 'partials/Page'
-import Head from 'components/Head'
+import { Title } from 'components/Helmet'
 import ProductCard from 'components/ProductCard'
 import styles from 'styles/shop.module.scss'
 
@@ -9,9 +9,7 @@ export const getStaticProps = async () => ({
 
 const Shop = ({ products }) => (
   <Page color="inherit">
-    <Head>
-      <title>Shop | Calm Cactus</title>
-    </Head>
+    <Title text="Shop | Calm Cactus" />
     <div className={styles.products}>
       {products.map(({ slug, ...product }) => (
         <ProductCard {...product} key={slug} href={`/shop/${slug}`} />

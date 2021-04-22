@@ -1,4 +1,6 @@
 export const about = {
+  name: 'Calm Cactus',
+  brandColor: '#ff7f7f',
   contactEmail: 'hello@calmcact.us',
   title: 'Hi! Nice to see you.',
   body:
@@ -7,8 +9,11 @@ export const about = {
 }
 
 export const social = {
-  instagram: 'https://www.instagram.com/calmcactusgoods/',
-  twitter: 'https://twitter.com/calmcactusgoods',
+  domain: 'calmcact.us',
+  instagramHandle: 'calmcactusgoods',
+  instagramURL: 'https://www.instagram.com/calmcactusgoods/',
+  twitterHandle: '@calmcactusgoods',
+  twitterURL: 'https://twitter.com/calmcactusgoods',
 }
 
 export const products = [
