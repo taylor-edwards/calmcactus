@@ -1,5 +1,5 @@
 import Page from 'partials/Page'
-import { Title } from 'components/Helmet'
+import { Description, PreviewImage, Title } from 'components/Helmet'
 import Image from 'components/Image'
 import Link from 'components/Link'
 import ProductLabel from 'components/ProductLabel'
@@ -13,6 +13,8 @@ export const getStaticProps = async () => ({
 const About = ({ contactEmail, title, body, imageSrc }) => (
   <Page>
     <Title text="About | Calm Cactus" />
+    <Description text={`${body.slice(0, 100)} ...`} />
+    <PreviewImage src={imageSrc} />
     <div className={styles.content}>
       <Image src={imageSrc} className={styles.image} />
 
