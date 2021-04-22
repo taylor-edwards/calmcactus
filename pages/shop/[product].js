@@ -24,9 +24,13 @@ export const getStaticPaths = async () => {
   }
 }
 
+const INDEX_KEY = 'img'
+
 const ProductPage = ({ product }) => {
   const { query, replace } = useRouter()
-  const imageIndex = query?.img && parseInt(query.img)
+  const queryIndex = query[INDEX_KEY]
+  const imageIndex =
+    typeof queryIndex !== 'undefined' ? parseInt(queryIndex) : 0
   return (
     <Page color={product.color}>
       <Title text={`${product.title} | Calm Cactus`} />
@@ -44,7 +48,7 @@ const ProductPage = ({ product }) => {
             images={product.images}
             selectedIndex={imageIndex}
             onSelect={i =>
-              replace(`${location.pathname}?img=${i}`, undefined, {
+              replace(`${location.pathname}?${INDEX_KEY}=${i}`, undefined, {
                 scroll: false,
               })
             }
