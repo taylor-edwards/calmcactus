@@ -1,0 +1,97 @@
+@import "styles/vars";
+
+.grid {}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  margin-bottom: 20px;
+}
+
+.cartHeader {
+  margin-bottom: 20px;
+}
+
+.cartItem {
+  align-items: center;
+  display: inline-flex;
+  margin-bottom: 20px;
+  padding-right: 40px;
+}
+
+.cartItemImage {
+  border-radius: 6px;
+  margin-right: 20px;
+  width: 80px;
+}
+
+.formTitle {
+  margin: 20px 0 10px;
+}
+
+.cardInput {
+  position: relative;
+}
+
+.cardInput::after {
+  background: #dadada;
+  border-radius: 3px;
+  bottom: 0;
+  content: "";
+  height: 20px;
+  margin: auto 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 32px;
+}
+
+.indicator,
+.separator {
+  margin: 0 2px;
+  opacity: 0.7;
+}
+
+.indicator {
+  vertical-align: -1px;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: auto min-content;
+
+  & > span:nth-child(even) {
+    position: relative;
+    text-align: right;
+
+    &::before {
+      content: "$";
+      left: 0;
+      margin-top: 1px;
+      position: absolute;
+      transform: translateX(-100%);
+    }
+  }
+}
+
+.orderTotal {
+  font-weight: 700;
+  margin-top: 1.5em;
+}
+
+.btn {
+  box-sizing: border-box;
+  margin-top: 20px;
+  padding: 8px 20px;
+  width: 100%;
+}
+
+@media (min-width: $desktop-min-width) {
+  .grid {
+    display: grid;
+    grid-gap: 0 40px;
+    grid-template-columns: 2fr 1fr;
+  }
+}

@@ -29,6 +29,7 @@ const ImageGrid = ({
           className={cn(styles.thumbnail, {
             [styles.selected]: i === selection,
           })}
+          noStyles
         >
           <Image src={src} className={styles.image} />
         </Button>

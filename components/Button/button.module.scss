@@ -1,0 +1,14 @@
+@import "styles/vars";
+
+.wrapper {
+  background: var(--default-text);
+  border-radius: var(--inner-bevel);
+  color: var(--default-fill);
+  padding: 5px 20px;
+
+  &:hover,
+  &:focus {
+    background: var(--fill);
+    color: var(--text);
+  }
+}
