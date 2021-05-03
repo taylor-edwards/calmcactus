@@ -1,5 +1,5 @@
 import { forwardRef } from 'react'
-import { compose, length, lt, map, slice, when } from 'ramda'
+import { compose, map, slice, when } from 'ramda'
 import { cn } from 'utils'
 import styles from './text.module.scss'
 
@@ -26,25 +26,25 @@ const insertNBSP = str =>
 
 const insertEllipsis = str => `${str.replace(/[.,;:\-!?\s\u2026]+$/, '')}\u2026`
 
-const treatText = ({ count }) =>
+const treatText = (maxLength, text) =>
   compose(
     insertNBSP,
-    when(compose(lt(count), length), insertEllipsis),
-    slice(0, count),
-  )
+    when(truncatedText => truncatedText.length < text.length, insertEllipsis),
+    slice(0, maxLength),
+  )(text)
 
 const renderChildren = (items, maxLength) => {
-  let printedCharCount = 0
+  let printedCount = 0
   return items.reduce((content, nextChild) => {
-    if (printedCharCount < maxLength) {
+    if (printedCount < maxLength) {
       switch (typeof nextChild) {
         case 'string': {
-          const count = Math.min(maxLength - printedCharCount, nextChild.length)
-          printedCharCount += count
+          const count = Math.min(maxLength - printedCount, nextChild.length)
+          printedCount += count
           return (
             <>
               {content}
-              {treatText({ count })(nextChild)}
+              {treatText(count, nextChild)}
             </>
           )
         }
