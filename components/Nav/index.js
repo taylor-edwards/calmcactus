@@ -16,10 +16,12 @@ const Nav = ({ className, inheritColor }) => (
       />
     </Link>
     <div className={styles.links}>
-      <Link className={styles.link} href="/about" inherit={inheritColor}>
-        <Text mode={Text.MODES.heading} allCaps>
-          About
-        </Text>
+      <Link
+        className={styles.link}
+        href={social.etsyURL}
+        inherit={inheritColor}
+      >
+        <Icon name="etsy" alt="Calm Cactus on Etsy" />
       </Link>
       <Link
         className={styles.link}
@@ -34,6 +36,11 @@ const Nav = ({ className, inheritColor }) => (
         inherit={inheritColor}
       >
         <Icon name="instagram" alt="Calm Cactus on Instagram" />
+      </Link>
+      <Link className={styles.link} href="/about" inherit={inheritColor}>
+        <Text mode={Text.MODES.heading} allCaps>
+          About
+        </Text>
       </Link>
     </div>
   </nav>

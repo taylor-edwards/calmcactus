@@ -16,23 +16,19 @@ const About = ({ contactEmail, title, body, imageSrc }) => (
     <Description text={`${body.slice(0, 100)} ...`} />
     <PreviewImage src={imageSrc} />
     <div className={styles.content}>
-      <Image src={imageSrc} className={styles.image} />
-
-      <div>
-        <ProductLabel title={title} />
-        <Text className={styles.description} mode={Text.MODES.body}>
-          {body}
-          <br />
-          <br />
-          If you have questions or concerns, please email us at{' '}
-          <Link href={`mailto:${contactEmail}`} className={styles.link}>
-            {contactEmail}
-          </Link>
-          <br />
-          <br />
-          Thanks for the support and have fun :)
-        </Text>
-      </div>
+      <ProductLabel title={title} />
+      <Text className={styles.description} mode={Text.MODES.body}>
+        {body}
+        <br />
+        <br />
+        If you have questions or concerns, please email us at{' '}
+        <Link href={`mailto:${contactEmail}`} className={styles.link}>
+          {contactEmail}
+        </Link>
+        <br />
+        <br />
+        Thanks for the support and have fun :)
+      </Text>
     </div>
   </Page>
 )

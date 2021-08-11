@@ -8,9 +8,10 @@ import Text from 'components/Text'
 import styles from 'styles/product-page.module.scss'
 
 export const getStaticProps = async ({ params: { product } }) => {
-  const { products } = await require('data')
+  const { products, social } = await require('data')
   return {
     props: {
+      etsyURL: social.etsyURL,
       product: products.find(({ slug }) => slug === product),
     },
   }
@@ -26,7 +27,7 @@ export const getStaticPaths = async () => {
 
 const INDEX_KEY = 'img'
 
-const ProductPage = ({ product }) => {
+const ProductPage = ({ product, etsyURL }) => {
   const { query, replace } = useRouter()
   const queryIndex = query[INDEX_KEY]
   const imageIndex =
@@ -65,9 +66,9 @@ const ProductPage = ({ product }) => {
           </div>
 
           <ProductLabel
-            title="View cart"
-            subtitle="You have 3 items in your cart"
-            href="/cart"
+            title="Buy now"
+            subtitle="Available on Etsy.com"
+            href={etsyURL}
           />
         </div>
       </div>

@@ -10,16 +10,12 @@
   padding-left: 24px;
 }
 
-.image {
-  border-radius: var(--inner-bevel);
-}
-
 .link {
   font-weight: 700;
 }
 
-@media (min-width: $desktop-min-width) {
-  .content {
-    grid-template-columns: 1fr 1fr;
-  }
+.content {
+  margin: 0 auto;
+  max-width: 500px;
+  width: 100%;
 }

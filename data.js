@@ -15,6 +15,7 @@ export const social = {
   instagramURL: 'https://www.instagram.com/calmcactusgoods/',
   twitterHandle: '@calmcactusgoods',
   twitterURL: 'https://twitter.com/calmcactusgoods',
+  etsyURL: 'https://www.etsy.com/shop/calmcactusgoods',
 }
 
 export const products = [
