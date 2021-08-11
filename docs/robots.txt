@@ -1,3 +1,0 @@
-User-agent: *
-Disallow: /shop/cart
-Disallow: /shop/checkout

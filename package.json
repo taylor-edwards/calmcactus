@@ -4,8 +4,9 @@
   "private": true,
   "sideEffects": false,
   "scripts": {
-    "start": "next dev",
-    "export": "next build && next export -o docs"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
     "next": "^11.1.0",
@@ -15,6 +16,7 @@
   "devDependencies": {
     "@babel/core": "^7.13.16",
     "@babel/plugin-proposal-export-default-from": "^7.12.13",
+    "@next/eslint-plugin-next": "^11.1.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.23.0",
     "eslint-plugin-react": "^7.23.1",
