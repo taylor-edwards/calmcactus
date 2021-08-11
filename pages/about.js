@@ -1,6 +1,5 @@
 import Page from 'partials/Page'
 import { Description, PreviewImage, Title } from 'components/Helmet'
-import Image from 'components/Image'
 import Link from 'components/Link'
 import ProductLabel from 'components/ProductLabel'
 import Text from 'components/Text'
