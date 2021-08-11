@@ -19,9 +19,9 @@ const ImageGrid = ({
   const selectedImage = images[selection]
   return (
     <div className={cn(styles.wrapper, className)} {...props}>
-      <div className={styles.feature}>
+      {selectedImage && (<div className={styles.feature}>
         <Image src={selectedImage.src} className={styles.image} />
-      </div>
+      </div>)}
       {images.slice(0, MAX_ITEMS).map(({ src }, i) => (
         <Button
           key={src}

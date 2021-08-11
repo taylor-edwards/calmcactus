@@ -35,3 +35,16 @@ export const range = (m, n) => {
   }
   return list
 }
+
+export const sleep = (x = 100) => new Promise(resolve => setTimeout(resolve, x))
+
+export const series = async (...fns) => {
+  let fn = fns[0],
+    i = 1
+  const results = []
+  while (fn) {
+    results.push(await fn())
+    fn = fns[i++]
+  }
+  return results
+}

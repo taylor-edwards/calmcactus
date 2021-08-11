@@ -8,17 +8,24 @@ import Text from 'components/Text'
 import styles from 'styles/product-page.module.scss'
 
 export const getStaticProps = async ({ params: { product } }) => {
-  const { products, social } = await require('data')
+  const etsyShopID = process.env.ETSY_SHOP_ID
+  const etsyAPIKey = process.env.ETSY_API_KEY
+  const etsySecret = process.env.ETSY_SECRET
+  const { fetchProducts } = await require('data')
+  const products = await fetchProducts(etsyShopID, etsyAPIKey, etsySecret)
   return {
     props: {
-      etsyURL: social.etsyURL,
       product: products.find(({ slug }) => slug === product),
     },
   }
 }
 
 export const getStaticPaths = async () => {
-  const { products } = await require('data')
+  const etsyShopID = process.env.ETSY_SHOP_ID
+  const etsyAPIKey = process.env.ETSY_API_KEY
+  const etsySecret = process.env.ETSY_SECRET
+  const { fetchProducts } = await require('data')
+  const products = await fetchProducts(etsyShopID, etsyAPIKey, etsySecret)
   return {
     fallback: false,
     paths: products.map(({ slug }) => ({ params: { product: slug } })),
@@ -27,7 +34,7 @@ export const getStaticPaths = async () => {
 
 const INDEX_KEY = 'img'
 
-const ProductPage = ({ product, etsyURL }) => {
+const ProductPage = ({ product }) => {
   const { query, replace } = useRouter()
   const queryIndex = query[INDEX_KEY]
   const imageIndex =
@@ -68,7 +75,7 @@ const ProductPage = ({ product, etsyURL }) => {
           <ProductLabel
             title="Buy now"
             subtitle="Available on Etsy.com"
-            href={etsyURL}
+            href={product.url}
           />
         </div>
       </div>
