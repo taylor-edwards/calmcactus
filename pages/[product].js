@@ -67,7 +67,7 @@ const ProductPage = ({ product }) => {
           <ProductLabel
             title="View cart"
             subtitle="You have 3 items in your cart"
-            href="/shop/cart"
+            href="/cart"
           />
         </div>
       </div>

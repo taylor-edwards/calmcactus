@@ -16,11 +16,6 @@ const Nav = ({ className, inheritColor }) => (
       />
     </Link>
     <div className={styles.links}>
-      <Link className={styles.link} href="/shop" inherit={inheritColor}>
-        <Text mode={Text.MODES.heading} allCaps>
-          Shop
-        </Text>
-      </Link>
       <Link className={styles.link} href="/about" inherit={inheritColor}>
         <Text mode={Text.MODES.heading} allCaps>
           About

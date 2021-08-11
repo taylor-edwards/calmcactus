@@ -1,17 +1,21 @@
-import Icon from 'components/Icon'
-import styles from 'styles/home.module.scss'
+import Page from 'partials/Page'
+import { Title } from 'components/Helmet'
+import ProductCard from 'components/ProductCard'
+import styles from 'styles/shop.module.scss'
 
-const Home = () => (
-  <div className={styles.container}>
-    <main className={styles.main}>
-      <h1 className={styles.title}>
-        <Icon name="cclogo" alt="Calm Cactus" size={300} />
-      </h1>
+export const getStaticProps = async () => ({
+  props: { products: await require('data').products },
+})
 
-      <p className={styles.description}>See you soon</p>
-      <p className={styles.smiley}>&#9787;</p>
-    </main>
-  </div>
+const Shop = ({ products }) => (
+  <Page>
+    <Title text="Shop | Calm Cactus" />
+    <div className={styles.products}>
+      {products.map(({ slug, ...product }) => (
+        <ProductCard {...product} key={slug} href={`/${slug}`} />
+      ))}
+    </div>
+  </Page>
 )
 
-export default Home
+export default Shop
