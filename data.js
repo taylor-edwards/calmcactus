@@ -18,13 +18,24 @@ export const social = {
   etsyURL: 'https://www.etsy.com/shop/calmcactusgoods',
 }
 
-const colors = ['canary', 'coral', 'salt-blue']
+const colors = {
+  'canary yellow': 'canary',
+  coral: 'coral',
+  'salt blue': 'salt-blue',
+}
 
-const listingToColor = listing =>
-  colors[
+const listingToColor = listing => {
+  for (const tag of listing.tags) {
+    if (colors.hasOwnProperty(tag)) {
+      return colors[tag]
+    }
+  }
+  const colorValues = Object.values(colors)
+  return colorValues[
     (listing.title.length + listing.description.length + listing.tags.length) %
-      colors.length
+      colorValues.length
   ]
+}
 
 const buildEtsyEndpoint = shopID =>
   `https://api.etsy.com/v3/application/shops/${shopID}`
@@ -60,7 +71,7 @@ export const fetchProducts = (shopID, apiKey, secret) =>
         ...data.results.map(listing => async () => {
           let images = []
           try {
-            await sleep(1000)
+            await sleep(500)
             images = await fetchProductImages(
               shopID,
               listing.listing_id,
