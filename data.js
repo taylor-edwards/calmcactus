@@ -41,7 +41,7 @@ const buildEtsyEndpoint = shopID =>
   `https://api.etsy.com/v3/application/shops/${shopID}`
 
 const isOkay = res =>
-  res.ok ? res : Promise.reject(new Error('Response not ok'))
+  res.ok ? res : Promise.reject(new Error(`Response code ${res.status} ({res.statusText})`, { res }))
 
 export const fetchProductImages = (shopID, productID, apiKey, secret) =>
   fetch(`${buildEtsyEndpoint(shopID)}/listings/${productID}/images`, {
@@ -71,7 +71,7 @@ export const fetchProducts = (shopID, apiKey, secret) =>
         ...data.results.map(listing => async () => {
           let images = []
           try {
-            await sleep(500)
+            await sleep(1500)
             images = await fetchProductImages(
               shopID,
               listing.listing_id,
@@ -79,10 +79,14 @@ export const fetchProducts = (shopID, apiKey, secret) =>
               secret,
             )
           } catch (err) {
-            console.warn('Failed to fetch images', {
-              shopID,
-              listingID: listing?.listing_id,
-            })
+            console.warn(
+              'Failed to fetch images',
+              {
+                shopID,
+                listingID: listing?.listing_id,
+              },
+              err,
+            )
           }
           return {
             images,
