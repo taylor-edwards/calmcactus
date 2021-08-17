@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+# deployment
+/deploy/
+
 # next.js
 /.next/
 
