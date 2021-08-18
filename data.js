@@ -37,69 +37,85 @@ const listingToColor = listing => {
   ]
 }
 
-const buildEtsyEndpoint = shopID =>
-  `https://api.etsy.com/v3/application/shops/${shopID}`
+const mapListingImage = ({ url_fullxfull }) => ({
+  src: url_fullxfull ?? null,
+})
 
-const isOkay = res =>
-  res.ok ? res : Promise.reject(new Error(`Response code ${res.status} ({res.statusText})`, { res }))
+const mapListingToProduct = listing => ({
+  color: listingToColor(listing),
+  description: listing.description,
+  id: listing.listing_id.toString(),
+  images: (listing.images ?? []).map(mapListingImage),
+  label: listing.quantity > 0 ? 'In stock' : 'Sold out',
+  slug: listing.url.slice(listing.url.lastIndexOf('/') + 1),
+  subtitle: `$${listing.price.amount / listing.price.divisor} ${
+    listing.materials.length > 0 ? '\u2014' : ''
+  } ${listing.materials.join(', ')}`,
+  title: listing.title,
+  url: listing.url,
+})
 
-export const fetchProductImages = (shopID, productID, apiKey, secret) =>
-  fetch(`${buildEtsyEndpoint(shopID)}/listings/${productID}/images`, {
+const fetchEtsyEndpoint = (apiKey, secret, shopID, path) =>
+  fetch(`https://api.etsy.com${path}`, {
     headers: {
       'x-api-key': apiKey,
     },
   })
-    .then(isOkay)
-    .then(res => res.json())
-    .then(data =>
-      data.results.map(listingImage => ({
-        src: listingImage.url_fullxfull,
-      })),
+    .then(res =>
+      res.ok
+        ? res
+        : Promise.reject(
+            new Error(`(Etsy) Couldn't fetch ${path}. Response code ${res.status} (${res.statusText})`, {
+              res,
+            }),
+          ),
     )
-
-export const fetchProducts = (shopID, apiKey, secret) =>
-  fetch(`${buildEtsyEndpoint(shopID)}/listings/active?limit=100`, {
-    headers: {
-      'x-api-key': apiKey,
-    },
-  })
-    .then(isOkay)
     .then(res => res.json())
-    .then(data =>
-      // avoid rate limiting by performing batch requests serially with a delay
-      series(
-        ...data.results.map(listing => async () => {
-          let images = []
-          try {
-            await sleep(1500)
-            images = await fetchProductImages(
+
+export const fetchProduct = (apiKey, secret, shopID, productID) =>
+  fetchEtsyEndpoint(
+    apiKey,
+    secret,
+    shopID,
+    `/v3/application/listings/${productID}?includes=images`,
+  ).then(mapListingToProduct)
+
+const fetchProductImages = (apiKey, secret, shopID, productID) =>
+  fetchEtsyEndpoint(
+    apiKey,
+    secret,
+    shopID,
+    `/v3/application/shops/${shopID}/listings/${productID}/images`,
+  ).then(data => data.results.map(mapListingImage))
+
+export const fetchProducts = (apiKey, secret, shopID) =>
+  fetchEtsyEndpoint(
+    apiKey,
+    secret,
+    shopID,
+    `/v3/application/shops/${shopID}/listings/active?limit=100`,
+  ).then(data => data.results.map(mapListingToProduct))
+
+export const fetchProductsWithImages = (apiKey, secret, shopID) =>
+  fetchProducts(apiKey, secret, shopID).then(products =>
+    // avoid rate limiting by spacing out requests with a delay
+    series(
+      ...products.map(product => async () => {
+        let images = []
+        try {
+          await sleep(50)
+          images = await fetchProductImages(apiKey, secret, shopID, product.id)
+        } catch (err) {
+          console.warn(
+            'Failed to fetch images',
+            {
               shopID,
-              listing.listing_id,
-              apiKey,
-              secret,
-            )
-          } catch (err) {
-            console.warn(
-              'Failed to fetch images',
-              {
-                shopID,
-                listingID: listing?.listing_id,
-              },
-              err,
-            )
-          }
-          return {
-            images,
-            title: listing.title,
-            label: listing.quantity > 0 ? 'In stock' : 'Sold out',
-            subtitle: `$${listing.price.amount / listing.price.divisor} ${
-              listing.materials.length > 0 ? '\u2014' : ''
-            } ${listing.materials.join(', ')}`,
-            slug: listing.url.slice(listing.url.lastIndexOf('/') + 1),
-            url: listing.url,
-            color: listingToColor(listing),
-            description: listing.description,
-          }
-        }),
-      ),
-    )
+              productID: product?.id,
+            },
+            err,
+          )
+        }
+        return { ...product, images }
+      }),
+    ),
+  )

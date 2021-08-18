@@ -7,16 +7,15 @@ import ProductLabel from 'components/ProductLabel'
 import Text from 'components/Text'
 import styles from 'styles/product-page.module.scss'
 
-export const getStaticProps = async ({ params: { product } }) => {
+export const getStaticProps = async ({ params: { productID } }) => {
   const etsyShopID = process.env.ETSY_SHOP_ID
   const etsyAPIKey = process.env.ETSY_API_KEY
   const etsySecret = process.env.ETSY_SECRET
-  const { fetchProducts } = await require('data')
-  const products = await fetchProducts(etsyShopID, etsyAPIKey, etsySecret)
+  const { fetchProduct } = await require('data')
+  const product = await fetchProduct(etsyAPIKey, etsySecret, etsyShopID, productID)
   return {
-    props: {
-      product: products.find(({ slug }) => slug === product),
-    },
+    props: { product },
+    revalidate: 600, // 10 minutes
   }
 }
 
@@ -25,10 +24,10 @@ export const getStaticPaths = async () => {
   const etsyAPIKey = process.env.ETSY_API_KEY
   const etsySecret = process.env.ETSY_SECRET
   const { fetchProducts } = await require('data')
-  const products = await fetchProducts(etsyShopID, etsyAPIKey, etsySecret)
+  const products = await fetchProducts(etsyAPIKey, etsySecret, etsyShopID)
   return {
-    fallback: false,
-    paths: products.map(({ slug }) => ({ params: { product: slug } })),
+    fallback: 'blocking',
+    paths: products.map(({ id, slug }) => ({ params: { productID: id, slug: [slug] } })),
   }
 }
 
