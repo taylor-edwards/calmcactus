@@ -103,7 +103,7 @@ export const fetchProductsWithImages = (apiKey, secret, shopID) =>
       ...products.map(product => async () => {
         let images = []
         try {
-          await sleep(50)
+          await sleep(500)
           images = await fetchProductImages(apiKey, secret, shopID, product.id)
         } catch (err) {
           console.warn(

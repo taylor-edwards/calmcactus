@@ -25,20 +25,3 @@ docker run -it -p 0.0.0.0:80:3000 calm_cactus_web:latest
 ```
 
 The production site should then be available at [localhost](http://localhost).
-
-## Deploying
-
-First time deployments require manually creating certificates with `certbot`
-from the host machine:
-
-```
-docker run -it --rm --name certbot \
-    -v "/$(pwd)/deploy/certbot:/etc/letsencrypt" \
-    -v "/$(pwd)/deploy/certbot-lib:/var/lib/letsencrypt" \
-    -p "80:80" \
-    -p "443:443" \
-    certbot/certbot certonly -d calmcact.us
-```
-
-Then use `docker-compose up --detach` to start the application server and
-proxy, then `docker-compose down` to stop it.
